@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0A0A0A">
 <title>TrueRead — Original B2B research, built for demand gen</title>
-<meta name="description" content="TrueRead fields original research on your real buyers and turns it into a demand engine marketing runs and sales cites. Start with one report: $10K, 30 days.">
+<meta name="description" content="Search, ads, and outbound are breaking as buyers move to AI. TrueRead builds original research on your real buyers, the one thing AI can't fake, and runs it across every channel. Start with one report: $10K, 30 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
@@ -55,7 +55,6 @@
 
   /* ===== sections / type ===== */
   section{padding:clamp(44px,6vw,90px) 0}
-  .view>section:first-child{padding-top:clamp(8px,2vw,18px)}
   .view-process section + section{border-top:1px dashed rgba(10,10,10,.18)}
   .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:clamp(12px,1.4vw,13px);font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:clamp(14px,1.6vw,18px)}
   .eyebrow .sq{width:12px;height:12px;border:2px solid var(--ink);border-radius:3px;background:var(--orange)}
@@ -169,10 +168,25 @@
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto}}
   a:focus-visible,.btn:focus-visible,.navcta:focus-visible,.navlink:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
   .bookwrap{margin-top:clamp(22px,2.8vw,32px);border:var(--bd);border-radius:clamp(16px,1.8vw,20px);box-shadow:var(--sh);background:#fff;overflow:hidden}
-  .bookwrap iframe{display:block;width:100%;border:0;height:1500px}
-  @media(min-width:600px){ .bookwrap iframe{height:1180px} }
-  @media(min-width:900px){ .bookwrap iframe{height:980px} }
+  .bookwrap iframe{display:block;width:100%;min-height:600px;border:0}
 </style>
+<style>@media(min-width:680px){.gp2{grid-template-columns:1fr 1fr!important}}</style>
+<style>
+  .lead-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:clamp(22px,3vw,30px)}
+  .txtlink{font-family:'JetBrains Mono';font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:2px;cursor:pointer}
+  .txtlink:hover{color:var(--orange)}
+  .risk{display:flex;align-items:flex-start;gap:10px;margin-top:18px;font-size:clamp(14px,1.4vw,15px);color:#3a3a3a;max-width:560px}
+  .risk .sq{width:11px;height:11px;border-radius:3px;background:var(--orange);flex:none;margin-top:5px}
+  .risk b{font-weight:700;color:var(--ink)}
+  .thesisbox{background:var(--ink);color:#fff;border:3px solid var(--orange);border-radius:clamp(18px,2.4vw,26px);box-shadow:var(--sh);padding:clamp(26px,3.6vw,44px);margin-top:clamp(26px,3vw,36px)}
+  .thesisbox .k{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:13px}
+  .thesisbox h3{font-size:clamp(26px,3.8vw,42px);line-height:1.02;color:#fff;letter-spacing:-.02em;font-family:'Bricolage Grotesque'}
+  .thesisbox p{margin:15px 0 0;font-size:clamp(15px,1.6vw,18px);color:#D8D8D8;max-width:780px}
+  .proofrow{display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin-top:clamp(20px,2.4vw,28px)}
+  .proofrow .nm{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(15px,1.6vw,18px);letter-spacing:-.01em;padding:8px 15px;border:var(--bd2);border-radius:10px;background:#fff;box-shadow:var(--shs)}
+  .proofrow .role{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+</style>
+
 </head>
 <body>
 
@@ -196,68 +210,84 @@
 <!-- ============================= HOME VIEW ============================= -->
 <main class="view view-home active" id="view-home">
 
-  <section class="wrap" style="padding-bottom:0">
+  <!-- HERO -->
+  <section class="wrap" style="padding-top:clamp(34px,5vw,60px);padding-bottom:clamp(30px,4vw,52px)">
     <div class="hero">
       <div>
-        <div class="eyebrow"><span class="sq"></span>Original research · demand gen · sales enablement</div>
-        <h1 class="htitle">Own the data your category <span class="o">doesn't have yet.</span></h1>
-        <p class="lede">TrueRead fields original research on your real buyers, then turns it into a demand engine marketing runs and sales cites in deals. The proprietary numbers that still earn attention now that AI made everything else identical.</p>
-        <div class="ctas two">
-          <a class="btn btn-secondary" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">Email for more information</a>
+        <div class="eyebrow"><span class="sq"></span>Original research for B2B · built for the AI era</div>
+        <h1 class="htitle">The channels you use to reach buyers <span class="o">are breaking.</span></h1>
+        <p class="lede">Search, paid ads, and cold email all stopped working at the same time. AI is why. The one thing that still gets through is data nobody else has, and that is exactly what we build.</p>
+        <div class="lead-cta">
           <a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a>
+          <a class="txtlink" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">or email Jacob &rarr;</a>
         </div>
-        <a class="seemore" href="#process" data-view="process" style="margin-top:16px">See how it works →</a>
-        <div class="trust"><span class="sq"></span><span>Built by the founding marketer behind category-defining research at Mosaic, NovoEd, and Mursion.</span></div>
+        <div class="risk"><span class="sq"></span><span>Start with one report: <b>$10K, 30 days, money-back if I miss the date.</b></span></div>
       </div>
       <div class="signature">
         <div class="top bg-orange"></div>
         <div class="bars"><span class="bg-fill" style="height:36%"></span><span class="bg-peach" style="height:55%"></span><span class="bg-yellow" style="height:76%"></span><span class="bg-orange" style="height:100%"></span></div>
-        <div class="lbl">Your data, compounding</div>
+        <div class="lbl">Data only you have, compounding</div>
       </div>
     </div>
   </section>
 
-  <section class="wrap reveal" style="padding-top:clamp(30px,4vw,52px)">
+  <!-- THE PROBLEM -->
+  <section class="wrap reveal">
+    <div class="eyebrow"><span class="sq"></span>The problem</div>
+    <h2 class="sh">Buyers moved to AI. <span class="o">The old playbook didn't follow.</span></h2>
+    <p class="lede">People used to Google a question, click a few links, and land on your page. Now they ask an AI and read the answer. They don't click. That single habit breaks the three things B2B has always run on.</p>
+    <div class="g3">
+      <div class="card"><div class="cap">Cold outreach · Nurture</div><h3 style="margin-top:6px">Every email sounds the same</h3><p>Everyone writes outreach with AI now, so it all reads as generic and buyers ignore all of it. Yours included.</p></div>
+      <div class="card"><div class="cap">Paid search · SEM</div><h3 style="margin-top:6px">Fewer people reach the ad</h3><p>The question gets answered in a chat before the buyer ever sees your ad. You pay more for less.</p></div>
+      <div class="card"><div class="cap">Search · SEO</div><h3 style="margin-top:6px">Ranking first stopped meaning visits</h3><p>The AI answers the question right on the page, so most searches now end with no click at all.</p></div>
+    </div>
+    <div class="card ink stack"><p style="margin:0;font-size:clamp(15px,1.5vw,16.5px)"><b>The pattern under all three:</b> when anyone can generate the same content and the same outreach for free, none of it persuades. Free to make turned into free to ignore.</p></div>
+  </section>
+
+  <!-- THE SHIFT / OUR VIEW -->
+  <section class="wrap reveal">
+    <div class="eyebrow"><span class="sq"></span>Our view</div>
+    <h2 class="sh">AI can remix anything. <span class="o">It can't invent data that doesn't exist.</span></h2>
+    <p class="lede">A model can rewrite every blog post ever written. It can't make up the results of a survey nobody ran. Original research, real numbers from your real buyers, is the only content that is genuinely new. So it's the one thing that still works in all three broken channels at once.</p>
     <div class="strip">
-      <div class="hstat"><div class="n">51%</div><p>of B2B software buyers now start research in an AI chatbot, up from 29% a year earlier. Generic content is invisible there. Original data is what gets cited.</p></div>
-      <div class="hstat"><div class="n">30%+</div><p>inbound growth driven by thought leadership in a prior B2B SaaS role. This is the motion, not a theory.</p></div>
-      <div class="hstat"><div class="n">3 yrs</div><p>head start a repeated study builds. A competitor starting today is years behind data they never began collecting.</p></div>
+      <div class="hstat"><div class="n">51%</div><p>of B2B software buyers now start their research in an AI chatbot, up from 29% a year earlier. <span style="color:#8a8a8a">G2 / Forrester, 2026.</span></p></div>
+      <div class="hstat"><div class="n">~60%</div><p>of Google searches now end with no click to any website at all. <span style="color:#8a8a8a">Semrush / SparkToro, 2025.</span></p></div>
+      <div class="hstat"><div class="n">+35%</div><p>more clicks for brands cited inside an AI answer, versus those left out. <span style="color:#8a8a8a">Semrush, 2025.</span></p></div>
+    </div>
+    <div class="thesisbox">
+      <div class="k">The whole idea</div>
+      <h3>One asset fixes all three channels at once.</h3>
+      <p>We field original research on your buyers, then run it everywhere the old playbook used to: the page AI cites, the campaign that earns links and press, the outreach that finally gets a reply. The data is the part competitors can't copy and AI can't fake. Everything else is built on top of it.</p>
     </div>
   </section>
 
+  <!-- WHAT YOU GET -->
   <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>What you get</div>
-    <h2 class="sh">One report that does <span class="o">three jobs.</span></h2>
-    <p class="lede">Not a whitepaper that ships and dies. A research asset built from the first question to generate demand and close deals.</p>
+    <h2 class="sh">One report. <span class="o">Three jobs.</span></h2>
+    <p class="lede">Not a whitepaper that ships and dies. One research asset, designed from the first question to work three ways.</p>
     <div class="g3">
-      <div class="card accent"><div class="cap">Authority</div><h3>Research that converts</h3><p>Primary data fielded on your real buyers, designed for demand gen, not a literature review. The numbers only you have.</p></div>
-      <div class="card"><div class="cap">Demand</div><h3>A demand engine, not a PDF</h3><p>Social, ads, email, search, and a webinar, all running off the report. An always-on motion, not a one-time post.</p></div>
-      <div class="card"><div class="cap">Pipeline</div><h3>Sales ammo reps cite</h3><p>Findings cut to slides and talk tracks, built with your sales lead, so the research lands in live deals instead of a shared drive.</p></div>
+      <div class="card accent"><div class="cap">Generates demand</div><h3 style="margin-top:6px">A campaign, not a PDF</h3><p>Social, ads, email, and a webinar, all running off the report. An always-on motion, not a one-time post.</p></div>
+      <div class="card"><div class="cap">Closes deals</div><h3 style="margin-top:6px">Stats reps actually cite</h3><p>Findings cut to slides and talk tracks, built with your sales lead, so the research lands in live deals.</p></div>
+      <div class="card"><div class="cap">Gets cited</div><h3 style="margin-top:6px">Research the AI quotes</h3><p>Original numbers are what answer engines cite and other sites link to, because there is nowhere else to get them.</p></div>
     </div>
+    <a class="seemore" href="#process" data-view="process">See exactly how it works &rarr;</a>
   </section>
 
+  <!-- THE FAST START -->
   <section class="wrap reveal">
-    <div class="eyebrow"><span class="sq"></span>How it works</div>
-    <h2 class="sh">Field it. Run it. <span class="o">Compound it.</span></h2>
+    <div class="eyebrow"><span class="sq"></span>The fast start</div>
+    <h2 class="sh">The kickoff is for strategy. <span class="o">We do the basics first.</span></h2>
+    <p class="lede">In the first week, before we sit down, you get three foundations to review on your own time. So the kickoff is spent on content strategy, not getting us up to speed.</p>
     <div class="g3">
-      <div class="card step"><div class="num">01</div><h3>Field the research</h3><p>A survey of your real buyers, plus an outside-in study. Original data nobody else has collected, with the panel passed through at cost.</p></div>
-      <div class="card step"><div class="num">02</div><h3>Turn it into a motion</h3><p>The report becomes campaigns and sales enablement. Run it yourself with the materials included, or have us run the whole motion.</p></div>
-      <div class="card step"><div class="num">03</div><h3>Compound it</h3><p>Repeat the study each year. Trend lines build a benchmark the market cites and competitors cannot copy.</p></div>
+      <div class="card"><div class="cap">Week one · 01</div><h3 style="font-size:clamp(18px,1.8vw,20px);margin-top:6px">Competitive landscape map</h3><p>A content-focused read of who else is publishing in your space, and where the open lanes are.</p></div>
+      <div class="card"><div class="cap">Week one · 02</div><h3 style="font-size:clamp(18px,1.8vw,20px);margin-top:6px">Citable public data</h3><p>A compilation of the public numbers worth building on, sourced and vetted, the weak ones flagged.</p></div>
+      <div class="card"><div class="cap">Week one · 03</div><h3 style="font-size:clamp(18px,1.8vw,20px);margin-top:6px">Offer and positioning</h3><p>A document on how we read your offer and where you sit, so we start the work already aligned.</p></div>
     </div>
-    <a class="seemore" href="#process" data-view="process">See the full process →</a>
+    <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#333"><b>Reviewed async.</b> You read and comment on your own time. By the time we meet, the basics are settled and the kickoff is all content strategy.</p></div>
   </section>
 
-  <section class="wrap reveal">
-    <div class="eyebrow"><span class="sq"></span>Why us</div>
-    <h2 class="sh">We've built this exact motion. <span class="o">Many times.</span></h2>
-    <p class="lede">Original research, the demand gen that runs off it, and the enablement underneath. Every piece of what TrueRead sells has shipped before, in hard technical B2B categories.</p>
-    <div class="g3">
-      <div class="card"><div class="cap">Original research</div><p>Designed, fielded, and wrote <em>The State of AI in A&amp;E 2026</em>, the report that made Mosaic its category's AI authority.</p></div>
-      <div class="card"><div class="cap">Demand that converts</div><p>Drove 30%+ inbound growth attributed to thought leadership at NovoEd, selling into Fortune 500 and regulated buyers.</p></div>
-      <div class="card"><div class="cap">Proof from real calls</div><p>Built an AI pipeline on Gong and Claude that mines every sales call for the exact customer language and proof points.</p></div>
-    </div>
-  </section>
-
+  <!-- OFFER + RISK REVERSAL -->
   <section class="wrap reveal">
     <div class="offer">
       <div>
@@ -265,25 +295,28 @@
         <h2>Start with one report.</h2>
         <ul>
           <li>A survey of your own customers, no panel to buy</li>
-          <li>A working report in 30 days, money-back if we miss the date</li>
-          <li>Proof of the motion before any bigger commitment</li>
+          <li>A working report in 30 days, money-back if I miss the date</li>
+          <li>Proof of the whole motion before any bigger commitment</li>
         </ul>
-        <div class="ctas two">
-          <a class="btn btn-secondary" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">Email for more information</a>
+        <div class="lead-cta">
           <a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a>
+          <a class="txtlink" href="#process" data-goto="pricing">see full pricing &rarr;</a>
         </div>
-        <a class="seemore" href="#process" data-goto="pricing" style="margin-top:16px">See full pricing →</a>
       </div>
-      <div class="box"><div class="cap">Trial · proof of concept</div><div class="big">$10K</div><p style="margin:8px 0 0;font-size:15px;color:#333">one report · 30 days</p></div>
+      <div class="box"><div class="cap">Trial · proof of concept</div><div class="big">$10K</div><p style="margin:8px 0 0;font-size:15px;color:#333">one report · 30 days · money-back</p></div>
     </div>
   </section>
 
+  <!-- CLOSE -->
   <section class="wrap reveal">
     <div class="hclose">
       <div class="eyebrow center" style="color:#9a9a9a;margin-bottom:18px;justify-content:center"><span class="sq"></span>Ready when you are</div>
       <h2>Become the source<br>your market <span class="o">cites.</span></h2>
-      <p>One report to start. If it lands, it becomes a cadence, an engine, and a dataset that gets harder to copy every cycle.</p>
-      <div class="ctas two" style="margin-left:auto;margin-right:auto"><a class="btn btn-secondary" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">Email for more information</a><a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a></div>
+      <p>One report to start. If it lands, it becomes a cadence, an engine, and a dataset that gets harder to copy every year.</p>
+      <div style="display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin-top:clamp(24px,3vw,32px)">
+        <a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a>
+        <a class="txtlink" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information" style="color:#fff">or email Jacob &rarr;</a>
+      </div>
     </div>
   </section>
 
@@ -308,23 +341,39 @@
   </section>
 
   <section class="wrap reveal">
-    <div class="eyebrow"><span class="sq"></span>The shift</div>
-    <h2 class="sh">AI made content infinite. <span class="o">And identical.</span></h2>
-    <p class="lede">Buyers open an AI chat before they open Google. Generic posts and listicles are free to make and free to ignore. The one thing a model can't generate is data nobody has collected yet. Primary research is what still gets cited, linked, and trusted.</p>
-    <div class="g2">
-      <div class="card"><div class="cap">Free now, ignored now</div><p>AI blog posts, listicles, public-stat roundups. Anyone can make it, so it persuades no one.</p></div>
-      <div class="card accent"><div class="cap" style="color:var(--orange)">Still earns attention</div><p>A real survey of real buyers. Numbers only you have. That is the asset.</p></div>
+    <div class="eyebrow"><span class="sq"></span>The problem</div>
+    <h2 class="sh">Buyers moved to AI. <span class="o">The old channels didn't follow.</span></h2>
+    <p class="lede">A buyer used to Google a question, click a few results, and land on your page. Now they ask an AI and read the answer. They don't click. That one change pulls the floor out from under three things at once.</p>
+    <div class="stat"><span class="n">51%</span><p>of B2B software buyers now start their research with an AI chatbot, up from 29% a year earlier. <span style="color:#8a8a8a">G2 / Forrester, 2026.</span></p></div>
+    <div class="g3">
+      <div class="card"><div class="cap">Cold outreach · Nurture</div><h3 style="margin-top:7px;font-size:clamp(18px,1.8vw,20px)">Every email sounds the same</h3><p>Everyone writes outreach with AI now. Buyers get the same generic notes all day, so they ignore all of it. Yours included.</p></div>
+      <div class="card"><div class="cap">Paid search · SEM</div><h3 style="margin-top:7px;font-size:clamp(18px,1.8vw,20px)">Fewer people reach the ad</h3><p>If the question gets answered in a chat, the buyer never reaches the page where your ad is. You pay more for less.</p></div>
+      <div class="card"><div class="cap">Search · SEO</div><h3 style="margin-top:7px;font-size:clamp(18px,1.8vw,20px)">Ranking first stopped meaning visits</h3><p>You can sit at the top of Google and still get almost no traffic. The AI answers the question right there on the page.</p></div>
     </div>
-    <div class="stat"><span class="n">51%</span><p>of B2B software buyers now start research with an AI chatbot, up from 29% a year earlier. G2, Forrester, 2026.</p></div>
+    <div class="stat"><span class="n">~60%</span><p>of Google searches now end with no click to any website at all. <span style="color:#8a8a8a">Semrush / SparkToro, 2025.</span></p></div>
+    <div class="card ink stack"><p style="margin:0;font-size:clamp(15px,1.5vw,16px)"><b>One thread runs through all three.</b> When anyone can generate the same content and the same outreach for free, none of it persuades. Free to make turned into free to ignore.</p></div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="eyebrow"><span class="sq"></span>The one thing</div>
+    <h2 class="sh">AI can remix anything. <span class="o">It can't invent data that doesn't exist.</span></h2>
+    <p class="lede">A model can rewrite every blog post ever written. It cannot make up the results of a survey nobody ran. Original research, real numbers from real buyers, is the only content that is actually new. That is why it still works in all three channels that broke.</p>
+    <div class="g3">
+      <div class="card accent"><div class="cap" style="color:var(--orange)">In AI search</div><h3 style="margin-top:7px;font-size:clamp(18px,1.8vw,20px)">It's what the AI cites</h3><p>AI answers name their sources. Original data gets named, because there's nowhere else to get it. And cited brands still get clicked.</p></div>
+      <div class="card"><div class="cap">In links and press</div><h3 style="margin-top:7px;font-size:clamp(18px,1.8vw,20px)">It's what earns coverage</h3><p>A number nobody else has is what reporters quote and other sites link to. Remixed content never earns it.</p></div>
+      <div class="card"><div class="cap">In outbound</div><h3 style="margin-top:7px;font-size:clamp(18px,1.8vw,20px)">It's the message that isn't filler</h3><p>A report with a stat your buyer hasn't seen is the one note that isn't AI sludge. It's a reason to reply.</p></div>
+    </div>
+    <div class="stat"><span class="n">+35%</span><p>more clicks for brands cited inside an AI answer, versus those left out. <span style="color:#8a8a8a">Semrush AI Overviews Study, 2025.</span></p></div>
+    <div class="card ink stack" style="border:3px solid var(--orange)"><div class="cap" style="color:var(--yellow)">The whole idea</div><h3 style="font-size:clamp(24px,3vw,32px);color:#fff;margin-top:8px">One asset fixes all three channels at once.</h3><p style="margin:12px 0 0;font-size:clamp(15px,1.5vw,16.5px);color:#D8D8D8">That is what TrueRead is. We build the research that still works in the AI era, then run it across every channel that used to: search, ads, and outreach. The data is the part competitors can't copy and AI can't fake.</p></div>
   </section>
 
   <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>How we work</div>
     <h2 class="sh">We build research for demand gen. <span class="o">Not the other way around.</span></h2>
-    <p class="lede">The research is built to convert, and it ships with the materials to use it. From there, one choice: run it yourself, or have us run the whole motion for you.</p>
+    <p class="lede">The research is built to convert, and it ships with the materials to use it. From there, one choice: run it yourself, or have us run it.</p>
     <div class="g2">
-      <div class="card accent"><div class="hd bg-orange"><span class="cap" style="color:#fff">Research + materials</span><span class="badge" style="background:#fff;color:var(--ink)">INCLUDED</span></div><h3>A robust set to run it yourself</h3><p>The report, plus a strong set of marketing and sales materials to use as-is or build from. Enough to put it to work without us running the campaigns.</p></div>
-      <div class="card"><div class="hd bg-paleyellow"><span class="cap">Done-for-you</span><span class="badge ink">IF YOU WANT</span></div><h3>Or we run the whole motion</h3><p>Demand gen, enablement, the customer webinar, performance marketing, PR. The robust version, run for you, so your team stays on selling.</p></div>
+      <div class="card accent"><div class="hd bg-orange"><span class="cap" style="color:#fff">Research only</span><span class="badge" style="background:#fff;color:var(--ink)">YOU RUN IT</span></div><h3>A robust set to run it yourself</h3><p>The report, plus a strong set of marketing and sales materials to use as-is or build from. Enough to put it to work without us running the campaigns.</p></div>
+      <div class="card"><div class="hd bg-paleyellow"><span class="cap">Growth &amp; Done-for-you</span><span class="badge ink">IF YOU WANT</span></div><h3>Or we run it</h3><p>Growth runs your LinkedIn outbound off the research. Done-for-you runs the full thought-leadership motion: distribution of the research, assets, enablement, events, and managed PR. We run the campaigns built on your research, not your general paid or social.</p></div>
     </div>
     <div class="card ink stack"><p style="margin:0;font-size:clamp(15px,1.5vw,16px)">We only take on the done-for-you work because we stand behind our research.</p></div>
   </section>
@@ -378,12 +427,12 @@
   <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The cadence</div>
     <h2 class="sh">One report owns the category. <span class="o">The rest go narrow.</span></h2>
-    <p class="lede">We recommend one marquee study a year, category-wide, the benchmark the whole market cites. Then we niche down: sharp cross-cuts of a single ICP and persona. The expensive part for a survey shop built for big studies, the cheap part for us.</p>
+    <p class="lede">We recommend one marquee study a year, category-wide, the benchmark the whole market cites. Then we niche down. Every new study is a fresh fielding, the $15K unit: Growth includes at least two a year, Done-for-you at least three. Cross-cuts re-slice data you already fielded into a single ICP and persona, with no new fielding. On Growth and Done-for-you they are included as needed to support segment campaigns and sales enablement. On a one-off report they are not.</p>
     <div class="card accent stack" style="margin-top:clamp(22px,2.6vw,30px)">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span class="pill bg-orange" style="color:#fff;font-size:15px;box-shadow:none">MARQUEE</span><span class="mono" style="font-size:13px;color:var(--soft)">1× / YEAR</span></div>
       <h3 style="margin-top:14px">The category, once a year</h3><p>Broad, citable, the report everyone references. The flagship you own and repeat.</p>
     </div>
-    <div class="row"><span class="pill bg-yellow" style="color:var(--ink);font-size:15px;box-shadow:none">CROSS-CUTS</span><span style="font-size:clamp(14.5px,1.5vw,16px);color:#444">Niched to one ICP × persona. Sharp, cheap to run, as many as the quarter needs.</span></div>
+    <div class="row"><span class="pill bg-yellow" style="color:var(--ink);font-size:15px;box-shadow:none">CROSS-CUTS</span><span style="font-size:clamp(14.5px,1.5vw,16px);color:#444">A re-slice of data you already fielded, niched to one ICP and persona. Not a new study. Included on Growth and Done-for-you to support segment campaigns and sales enablement, not on a one-off report.</span></div>
     <div class="g3" style="margin-top:14px">
       <div class="card bg-fill"><div class="cap">ICP × persona</div><div style="font-size:clamp(16px,1.6vw,18px);font-weight:700;font-family:'Bricolage Grotesque';margin-top:6px">RevOps leaders, mid-market</div></div>
       <div class="card bg-fill"><div class="cap">ICP × persona</div><div style="font-size:clamp(16px,1.6vw,18px);font-weight:700;font-family:'Bricolage Grotesque';margin-top:6px">Security buyers, enterprise</div></div>
@@ -394,28 +443,35 @@
   <section class="wrap reveal" id="pricing">
     <div class="eyebrow"><span class="sq"></span>What it costs</div>
     <h2 class="sh">Buy the research. <span class="o">Have us run it if you want.</span></h2>
-    <p class="small" style="margin-top:12px">Panel cost passed through at cost, no markup. Media and ad spend on you.</p>
-    <div class="gp" style="margin-top:clamp(22px,2.6vw,28px);align-items:stretch">
+    <p class="small" style="margin-top:12px"><b>Panel costs are never included.</b> The research panel is passed through to you at cost, with no markup. Media and ad spend are on you too.</p>
+    <style>.ptiles{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,18px);margin-top:clamp(22px,2.6vw,28px);align-items:start}@media(min-width:680px){.ptiles{grid-template-columns:1fr 1fr}}@media(min-width:1080px){.ptiles{grid-template-columns:repeat(4,1fr)}}</style>
+    <div class="ptiles">
       <div class="card" style="border-style:dashed">
-        <div class="cap">Proof of concept · once</div><h3 style="font-size:clamp(22px,2.4vw,26px);margin-top:5px">Trial</h3>
+        <div class="cap">Proof of concept · once</div><h3 style="font-size:clamp(21px,2.2vw,24px);margin-top:5px">Trial</h3>
         <p class="small" style="font-style:italic;margin-top:9px">A survey of your own customers. Quick and cheap to field, the motion proven on a small scale first.</p>
-        <ul class="b"><li>Surveys your existing customers, no panel to buy</li><li>Cheaper and faster to field than a market study</li><li>A working report in 30 days, money-back if we miss the date</li></ul>
+        <ul class="b"><li>Surveys your existing customers, so there is no research panel to buy or pay for</li><li>Cheaper and faster to field than a market study</li><li>A working report in 30 days, money-back if I miss the date</li></ul>
         <div class="price"><span class="pill bg-peach" style="color:var(--ink)">$10K · once</span></div>
       </div>
       <div class="card">
-        <div class="hd bg-orange"><span class="cap" style="color:#fff">The core · stands alone</span></div><h3 style="font-size:clamp(22px,2.4vw,26px)">Research + materials</h3>
-        <p class="small" style="font-style:italic;margin-top:9px">The report plus a robust set of materials to run it yourself. Buy this and stop here.</p>
-        <ul class="b"><li>The designed report, built for marketing and sales both</li><li>A robust set of marketing and sales materials to use or build from</li><li>A repeat survey that builds trend lines you own</li><li>$15K is our fee. The research panel is passed to you at cost, no markup.</li></ul>
-        <div class="price"><span class="pill bg-orange" style="color:#fff">from $15K / report</span><div class="passnote">+ panel cost, passed through at cost</div></div>
+        <div class="hd bg-sky"><span class="cap">The research, on its own</span></div><h3 style="font-size:clamp(21px,2.2vw,24px)">Research only</h3>
+        <p class="small" style="font-style:italic;margin-top:9px">The report and its materials. You run it. Buy reports when you want them.</p>
+        <ul class="b"><li>The designed report on real buyer data. The research panel is not included; passed to you at cost, no markup.</li><li>The marketing and sales materials to use or build from</li><li>A repeat survey on your next report builds trend lines you own</li></ul>
+        <div class="price"><span class="pill bg-sky" style="color:var(--ink)">$15K / report</span><div class="passnote">You run the materials yourself · panel cost passed through at cost, no markup</div></div>
       </div>
       <div class="card">
-        <div class="hd bg-teal"><span class="cap">Optional · we run it</span></div><h3 style="font-size:clamp(22px,2.4vw,26px)">Done-for-you</h3>
-        <p class="small" style="font-style:italic;margin-top:9px">The robust version, run for you, so your team stays on selling.</p>
-        <ul class="b"><li>The demand engine: social, ads, email, LinkedIn outbound</li><li>Enablement sessions that land it in deals</li><li>A co-presented webinar per cycle</li><li>PR run end to end: we find and manage the agent, you stay out of it</li></ul>
-        <div class="price"><span class="pill bg-teal" style="color:var(--ink)">from +$3K / quarter</span><div class="passnote">+ panel and media, passed through at cost</div></div>
+        <div class="hd bg-orange"><span class="cap" style="color:#fff">Research + outbound</span></div><h3 style="font-size:clamp(21px,2.2vw,24px)">Growth</h3>
+        <p class="small" style="font-style:italic;margin-top:9px">The research on a cadence, plus full-service LinkedIn outbound automation built off your data.</p>
+        <ul class="b"><li>The research on a cadence: at least two reports a year, with a repeat survey that builds trend lines you own</li><li>Full-service LinkedIn automation tied to your research, targeting 2-4 segments, refreshed continuously</li><li>Niche/hyper-targeted list building (complex enrichment included) to support the campaign, lists shared with you</li><li><b>Up to 1 asset a month to support segment campaigns:</b> a one-pager, a unique cross-cut, and so on</li><li>The research panel is not included; passed to you at cost, no markup</li></ul>
+        <div class="price"><span class="pill bg-orange" style="color:#fff">$15K/report + $3K/mo</span><div class="passnote">Min 2 reports a year · monthly covers full-service outbound on LinkedIn for up to 3 seats · panel cost passed through at cost</div></div>
+      </div>
+      <div class="card">
+        <div class="hd bg-teal"><span class="cap">We run the research motion</span></div><h3 style="font-size:clamp(21px,2.2vw,24px)">Done-for-you</h3>
+        <p class="small" style="font-style:italic;margin-top:9px">Everything in Growth, on a heavier cadence, with more asset production and the research's distribution run for you.</p>
+        <ul class="b"><li>The research on a cadence: at least three reports a year</li><li><b>Up to 5 original assets a month, built from the data:</b> slides, one-pagers, ebooks, calculators, landing pages.</li><li>Paid and organic distribution of the research, run for you: social, ad management, email and nurture, all built around the reports</li><li><b>This covers the thought-leadership motion only.</b> We run the campaigns built on your research. We are not your general paid or social agency.</li><li>Sales enablement and a co-presented webinar per cycle</li><li>PR &amp; Earned Speaking Applications: I'm not a press agent. I find you one, manage and traffic-manage them, and produce what they need from you (submissions, bios, speaking and award applications), so they never distract your team</li><li>The research panel is not included; passed to you at cost, no markup</li></ul>
+        <div class="price"><span class="pill bg-teal" style="color:var(--ink)">$15K/report + $6K/mo</span><div class="passnote">Min 3 reports a year · monthly covers distribution + asset production · panel cost passed through at cost</div></div>
       </div>
     </div>
-    <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#333"><b>Why we even offer it:</b> we only run the done-for-you work because we stand behind the research. Take the materials and do it yourself, or hand us the execution. The research is the same either way.</p></div>
+    <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#333"><b>The research is the unit:</b> every tier is built on the same $15K report. Take it on its own (Research only), or add the monthly that runs your outbound and turns the data into assets (Growth), or the whole motion (Done-for-you). The research is the same either way. In every package, panel costs are passed through to you at cost, with no markup.</p></div>
   </section>
 
   <section class="wrap reveal">
@@ -436,11 +492,10 @@
   <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>LinkedIn + paid</div>
     <h2 class="sh">The report finds the buyer. <span class="o">On autopilot.</span></h2>
-    <p class="lede">Start with managed 1:1 outreach. Layer paid reach on top as it earns its keep. Each level sits on the one before it. Media and ad spend are separate and on you.</p>
-    <div class="gp" style="align-items:stretch">
-      <div class="card accent"><div class="hd bg-orange"><span class="cap" style="color:#fff">Base · per seat</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Outreach automation</h3><ul class="b"><li>Build a custom ICP list, one-time</li><li>Automated 1:1 outreach from your seats, the report as the opener</li><li>Matched accounts handed to sales</li></ul><div class="price"><span class="pill bg-orange" style="color:#fff;font-size:16px">$250 / seat / mo</span><div class="passnote">4-seat min ($3K/q) · + $2,500 list build</div></div></div>
-      <div class="card"><div class="hd bg-sky"><span class="cap">Add · +$500 / mo</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Paid ad management</h3><p>LinkedIn conversation ads and Meta display ads, managed end to end, promoting the ebook to the same buyers the outreach is reaching.</p><div class="price"><span class="pill bg-sky" style="color:var(--ink);font-size:16px">+$500 / mo</span></div></div>
-      <div class="card"><div class="hd bg-paleyellow"><span class="cap">Add · +$1,500 / mo</span><span class="badge ink">MONTH 6+</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Multi-channel orchestration</h3><p>Identity resolution and audience construction across LinkedIn, Meta, Reddit, and YouTube / Video 360. The full programmatic build around the research.</p><div class="price"><span class="pill bg-paleyellow" style="color:var(--ink);font-size:16px">+$1,500 / mo</span></div></div>
+    <p class="lede">Outbound is what Growth runs. Paid reach is part of Done-for-you, layered on as it earns its keep. Media and ad spend are separate and on you.</p>
+    <div class="gp gp2" style="align-items:stretch">
+      <div class="card accent"><div class="hd bg-orange"><span class="cap" style="color:#fff">Outbound · both tiers</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Outreach automation</h3><ul class="b"><li>Build a custom ICP list, one-time</li><li>Automated 1:1 outreach from your seats, the report as the opener</li><li>Matched accounts handed to sales</li></ul><div class="price"><span class="pill bg-orange" style="color:#fff;font-size:16px">In both tiers</span><div class="passnote">Included in the monthly fee; data passed through at cost</div></div></div>
+      <div class="card"><div class="hd bg-sky"><span class="cap">Paid · Done-for-you</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Paid ad management</h3><p>LinkedIn conversation ads and Meta display ads, managed end to end, promoting the ebook to the same buyers the outreach is reaching.</p><div class="price"><span class="pill bg-sky" style="color:var(--ink);font-size:16px">In Done-for-you</span></div></div>
     </div>
   </section>
 
@@ -481,7 +536,7 @@
     <h2 class="sh">Book a 30-minute <span class="o">strategy call.</span></h2>
     <p class="lede">Pick a time that works. We'll talk through your category, the research that would land, and how the motion would run. No prep needed.</p>
     <div class="bookwrap">
-      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1K-6lR3v5kTs8H0FUINIQd9GmOf66cNO1thCWsZFL2MFLd1hFnQ72sj8zU0n5MbriLXO-H7A6S?gv=true" style="border:0" width="100%" height="1500" frameborder="0" title="Book a 30-minute strategy call"></iframe>
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1K-6lR3v5kTs8H0FUINIQd9GmOf66cNO1thCWsZFL2MFLd1hFnQ72sj8zU0n5MbriLXO-H7A6S?gv=true" style="border:0" width="100%" height="600" frameborder="0" title="Book a 30-minute strategy call"></iframe>
     </div>
   </section>
 
