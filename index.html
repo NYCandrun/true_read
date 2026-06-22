@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<title>TrueRead — Research the field hasn't published.</title>
+<meta name="description" content="Original B2B research built for demand gen. One report marketing runs and sales cites, plus a year-round engine to put it to work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0A;--soft:#5A5A5A;--paper:#ECEAE4;--card:#fff;--fill:#F3F3F1;
+    --orange:#FF4200;--coral:#FD8591;--yellow:#FFD349;--paleyellow:#F9E77F;
+    --teal:#54C7C7;--sky:#A8E9FF;--peach:#FFCBBD;--mint:#CDEED6;--purple:#9C0AD1;
+    --bd:3px solid #0A0A0A;--bd2:2px solid #0A0A0A;--sh:6px 7px 0 #0A0A0A;--shs:4px 5px 0 #0A0A0A;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(18px,5vw,56px);padding-left:max(clamp(18px,5vw,56px),env(safe-area-inset-left));padding-right:max(clamp(18px,5vw,56px),env(safe-area-inset-right))}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(236,234,228,.85);backdrop-filter:saturate(1.2) blur(9px);border-bottom:var(--bd)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:clamp(56px,7vw,72px)}
+  .brand{display:flex;align-items:center;gap:10px}
+  .mark{width:clamp(26px,3.3vw,30px);height:clamp(26px,3.3vw,30px);border:var(--bd2);border-radius:7px;background:var(--ink);position:relative;flex:none}
+  .mark::after{content:"";position:absolute;inset:22%;background:var(--orange);border-radius:3px}
+  .brand b{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(19px,2.3vw,22px);letter-spacing:-.01em}
+  .mailtop{font-family:'JetBrains Mono';font-size:clamp(12px,1.4vw,13px);font-weight:500;letter-spacing:.04em;color:var(--ink);text-decoration:none;border:var(--bd2);border-radius:10px;padding:8px 12px;background:var(--yellow);box-shadow:var(--shs)}
+
+  /* sections + type */
+  section{padding:clamp(40px,6vw,86px) 0}
+  section + section{border-top:1px dashed rgba(10,10,10,.18)}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:clamp(12px,1.4vw,13px);font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:clamp(14px,1.6vw,18px)}
+  .eyebrow .sq{width:12px;height:12px;border:2px solid var(--ink);border-radius:3px;background:var(--orange)}
+  h1,h2,h3{font-family:'Bricolage Grotesque','Inter',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02;margin:0}
+  .htitle{font-size:clamp(40px,7.6vw,80px);line-height:.98}
+  h2.sh{font-size:clamp(27px,4.3vw,46px);line-height:1.03}
+  .o{color:var(--orange)}
+  .lede{font-size:clamp(16.5px,1.55vw,21px);color:#2c2c2c;margin:clamp(14px,1.6vw,18px) 0 0;max-width:840px}
+  .mono{font-family:'JetBrains Mono'}
+  .small{font-size:clamp(13px,1.4vw,14.5px);color:#3a3a3a}
+
+  /* grids (mobile-first; columns step up at breakpoints) */
+  .g2,.g3,.g4,.gp{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,18px);margin-top:clamp(22px,2.6vw,30px)}
+  @media(min-width:620px){ .g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:1fr 1fr} }
+  @media(min-width:560px){ .g4{grid-template-columns:1fr 1fr} }
+  @media(min-width:880px){ .gp{grid-template-columns:1fr 1fr 1fr} }
+  @media(min-width:980px){ .g3{grid-template-columns:1fr 1fr 1fr} }
+  @media(min-width:1080px){ .g4{grid-template-columns:1fr 1fr 1fr 1fr} }
+  .stack{margin-top:clamp(14px,1.6vw,18px)}
+
+  .tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:clamp(18px,2.2vw,24px)}
+  .tag{font-family:'JetBrains Mono';font-size:clamp(11.5px,1.3vw,12.5px);letter-spacing:.06em;text-transform:uppercase;padding:7px 11px;border:var(--bd2);border-radius:9px;background:#fff;box-shadow:var(--shs)}
+
+  .card{border:var(--bd);border-radius:clamp(16px,1.8vw,20px);box-shadow:var(--sh);background:var(--card);padding:clamp(18px,2vw,24px);display:flex;flex-direction:column}
+  .card h3{font-size:clamp(18px,1.8vw,23px)}
+  .card p{margin:9px 0 0;font-size:clamp(14.5px,1.4vw,15.5px);color:#333}
+  .cap{font-family:'JetBrains Mono';font-size:clamp(11px,1.25vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  .hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:calc(-1 * clamp(18px,2vw,24px)) calc(-1 * clamp(18px,2vw,24px)) 15px;padding:12px clamp(18px,2vw,24px);border-bottom:var(--bd);border-radius:clamp(13px,1.5vw,17px) clamp(13px,1.5vw,17px) 0 0}
+  .badge{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;padding:3px 9px;border-radius:6px;white-space:nowrap}
+
+  .bg-orange{background:var(--orange)} .bg-peach{background:var(--peach)} .bg-sky{background:var(--sky)}
+  .bg-yellow{background:var(--yellow)} .bg-paleyellow{background:var(--paleyellow)} .bg-teal{background:var(--teal)}
+  .bg-coral{background:var(--coral)} .bg-mint{background:var(--mint)} .bg-fill{background:var(--fill)}
+  .ink{background:var(--ink);color:#EDEDED;border-color:var(--ink)} .ink p{color:#EDEDED}
+  .accent{box-shadow:6px 7px 0 var(--orange)}
+
+  ul.b{list-style:none;margin:13px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  ul.b li{position:relative;padding-left:19px;font-size:clamp(14px,1.4vw,15px);color:#2f2f2f;line-height:1.4}
+  ul.b li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+
+  .stat{display:flex;align-items:center;gap:clamp(14px,1.8vw,18px);margin-top:clamp(16px,2vw,22px);background:var(--ink);color:#EDEDED;border-radius:16px;padding:clamp(15px,1.8vw,18px) clamp(16px,2vw,22px)}
+  .stat .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(24px,3.2vw,32px);color:var(--yellow);line-height:1;flex:none}
+  .stat p{margin:0;font-size:clamp(13.5px,1.4vw,15.5px);color:#E4E4E4}
+
+  .price{margin-top:auto;padding-top:16px}
+  .pill{display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(16px,1.8vw,20px);padding:9px 16px;border:var(--bd);border-radius:13px;box-shadow:var(--shs)}
+  .passnote{font-family:'JetBrains Mono';font-size:11.5px;color:var(--soft);margin-top:9px}
+
+  /* hero + engine layouts */
+  .hero{display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,34px);align-items:center}
+  @media(min-width:760px){ .hero{grid-template-columns:1.2fr .9fr} }
+  .signature{border:var(--bd);border-radius:18px;box-shadow:var(--sh);overflow:hidden;background:#fff}
+  .signature .top{height:clamp(24px,3vw,32px);border-bottom:var(--bd)}
+  .bars{display:flex;align-items:flex-end;justify-content:space-around;gap:clamp(10px,1.4vw,14px);height:clamp(120px,17vw,200px);padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,24px) 0}
+  .bars span{flex:1;border:var(--bd2);border-bottom:none}
+  .signature .lbl{border-top:var(--bd);padding:10px clamp(14px,1.8vw,20px);font-family:'JetBrains Mono';font-size:clamp(11px,1.3vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+
+  .engine{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,18px);margin-top:clamp(22px,2.6vw,30px)}
+  @media(min-width:820px){ .engine{grid-template-columns:.7fr 1.3fr} }
+
+  .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
+
+  /* close */
+  .close{background:var(--ink);color:#fff;border-radius:clamp(20px,2.4vw,26px);padding:clamp(34px,5vw,64px) clamp(24px,4vw,56px);margin-top:18px}
+  .close h2{font-size:clamp(38px,5.6vw,66px);line-height:1;color:#fff}
+  .close p{color:#CFCFCF;font-size:clamp(16px,1.7vw,19px);margin:20px 0 0;max-width:640px}
+  .cta{display:inline-block;margin-top:clamp(22px,3vw,30px);background:var(--orange);color:#fff;text-decoration:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(19px,2.2vw,23px);padding:16px clamp(28px,4vw,44px);border-radius:15px;border:3px solid #fff;transition:transform .12s ease}
+  .cta:hover{transform:translate(-2px,-2px)}
+  .closefoot{margin-top:24px;font-family:'JetBrains Mono';font-size:clamp(12px,1.4vw,13px);letter-spacing:.08em;color:#9a9a9a;text-transform:uppercase}
+
+  footer{padding:clamp(26px,4vw,40px) 0 calc(clamp(30px,4vw,44px) + env(safe-area-inset-bottom));text-align:center}
+  footer .mono{font-size:clamp(11.5px,1.3vw,12.5px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto}}
+  a:focus-visible,.cta:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand"><span class="mark"></span><b>TrueRead</b></div>
+    <a class="mailtop" href="mailto:jacob@trueread.co">jacob@trueread.co</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section style="padding-top:clamp(36px,5vw,72px)">
+    <div class="hero">
+      <div>
+        <div class="tags">
+          <span class="tag bg-peach">Original research</span>
+          <span class="tag bg-sky">Demand gen</span>
+          <span class="tag bg-paleyellow">Sales enablement</span>
+        </div>
+        <h1 class="htitle">Research the field<br><span class="o">hasn't published.</span></h1>
+        <p class="lede">One report, built on real buyer data, that marketing runs for demand and sales cites in deals. Not another blog post. The proprietary numbers your category doesn't have yet, and a year-round engine to put them to work.</p>
+      </div>
+      <div class="signature">
+        <div class="top bg-orange"></div>
+        <div class="bars">
+          <span class="bg-fill" style="height:38%"></span>
+          <span class="bg-peach" style="height:56%"></span>
+          <span class="bg-yellow" style="height:76%"></span>
+          <span class="bg-orange" style="height:100%"></span>
+        </div>
+        <div class="lbl">Your data, compounding</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SHIFT -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>The shift</div>
+    <h2 class="sh">AI made content infinite. <span class="o">And identical.</span></h2>
+    <p class="lede">Buyers open an AI chat before they open Google. Generic posts and listicles are free to make and free to ignore. The one thing a model can't generate is data nobody has collected yet. Primary research is what still gets cited, linked, and trusted.</p>
+    <div class="g2">
+      <div class="card"><div class="cap">Free now, ignored now</div><p>AI blog posts, listicles, public-stat roundups. Anyone can make it, so it persuades no one.</p></div>
+      <div class="card accent"><div class="cap" style="color:var(--orange)">Still earns attention</div><p>A real survey of real buyers. Numbers only you have. That is the asset.</p></div>
+    </div>
+    <div class="stat"><span class="n">51%</span><p>of B2B software buyers now start research with an AI chatbot, up from 29% a year earlier. G2, Forrester, 2026.</p></div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>How we work</div>
+    <h2 class="sh">We build research for demand gen. <span class="o">Not the other way around.</span></h2>
+    <p class="lede">The research is built to convert, and it ships with the materials to use it. From there, one choice: run it yourself, or have us run the whole motion for you.</p>
+    <div class="g2">
+      <div class="card accent">
+        <div class="hd bg-orange"><span class="cap" style="color:#fff">Research + materials</span><span class="badge" style="background:#fff;color:var(--ink)">INCLUDED</span></div>
+        <h3>A robust set to run it yourself</h3>
+        <p>The report, plus a strong set of marketing and sales materials to use as-is or build from. Enough to put it to work without us running the campaigns.</p>
+      </div>
+      <div class="card">
+        <div class="hd bg-paleyellow"><span class="cap">Done-for-you</span><span class="badge ink">IF YOU WANT</span></div>
+        <h3>Or we run the whole motion</h3>
+        <p>Demand gen, enablement, the customer webinar, performance marketing, PR. The robust version, run for you, so your team stays on selling.</p>
+      </div>
+    </div>
+    <div class="card ink stack"><p style="margin:0;font-size:clamp(15px,1.5vw,16px)">We only take on the done-for-you work because we stand behind our research.</p></div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>Why us</div>
+    <h2 class="sh">We've built this exact motion. <span class="o">Many times.</span></h2>
+    <p class="lede">Original research, the demand gen that runs off it, and the enablement underneath. Every piece of what TrueRead sells, we have shipped before, in hard technical B2B categories.</p>
+    <div class="g4">
+      <div class="card"><div class="cap">Original research</div><p>Designed, fielded, and wrote <em>The State of AI in A&amp;E 2026</em>, the report that made Mosaic its category's AI authority. Plus a flagship VR study at Mursion.</p></div>
+      <div class="card"><div class="cap">Demand that converts</div><p>Drove 30%+ inbound growth attributed to thought leadership at NovoEd, selling into Fortune 500 and regulated buyers.</p></div>
+      <div class="card"><div class="cap">Sales enablement</div><p>Built the battlecards and decks that moved reps from feature-based to outcome-based selling.</p></div>
+      <div class="card"><div class="cap">Proof from real calls</div><p>Built an AI pipeline on Gong and Claude that mines every sales call for customer language and proof points.</p></div>
+    </div>
+    <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#444"><b>Jacob Nikolau.</b> Founding and zero-to-one marketer at Mosaic, NovoEd, and Mursion, across next-generation agentic project management, enterprise learning, and enterprise virtual reality.</p></div>
+  </section>
+
+  <!-- ONE ASSET TWO USES -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>The offer</div>
+    <h2 class="sh">One report. <span class="o">Two jobs.</span></h2>
+    <p class="lede">The same research asset works twice. Marketing runs it as a demand engine. Sales pulls the numbers into live deals.</p>
+    <div class="g2">
+      <div class="card">
+        <div class="hd bg-sky"><span class="cap">Marketing · demand</span></div>
+        <h3>A campaign, not a PDF</h3>
+        <ul class="b"><li>Social and ad concepts cut to the sharpest data slices</li><li>Email, search, GEO and AEO, the report at the center</li><li>A webinar built around the findings</li></ul>
+      </div>
+      <div class="card">
+        <div class="hd bg-paleyellow"><span class="cap">Sales · enablement</span></div>
+        <h3>Stats reps actually cite</h3>
+        <ul class="b"><li>Findings cut to slides, with the talk track for each</li><li>Objection-handling numbers, built with your sales lead</li><li>One enablement session so it lands in deals</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT'S BUILT -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>How it's built</div>
+    <h2 class="sh">Real data. <span class="o">Not a literature review.</span></h2>
+    <p class="lede">The numbers are primary, which is what makes them yours. Two inputs are standard. A third is there for teams who can share it.</p>
+    <div class="g3">
+      <div class="card"><div class="cap">Standard</div><h3 style="margin-top:7px">Outside-in study</h3><p>Your market, competitors, and buyers. We form our own read before you brief us.</p></div>
+      <div class="card accent"><div class="cap" style="color:var(--orange)">Standard · the core</div><h3 style="margin-top:7px">A survey of real buyers</h3><p>Original data nobody else has collected. The part AI can't fake. Panel cost passed through at cost.</p></div>
+      <div class="card" style="border-style:dashed"><div class="cap">Optional · opt-in</div><h3 style="margin-top:7px">Your first-party data</h3><p>A sandboxed read of your CRM and calls, under a clear data agreement. Never required to start.</p></div>
+    </div>
+  </section>
+
+  <!-- WHY IT DOESN'T FADE -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>The difference</div>
+    <h2 class="sh">A report fades. <span class="o">A program compounds.</span></h2>
+    <p class="lede">Most research dies because it ships as a PDF and stops. Three things keep this one working.</p>
+    <div class="g3">
+      <div class="card"><h3>It tracks, not just reports</h3><p>Repeat the survey each cycle and year two has trend lines. A rival can't reproduce data they never started collecting.</p></div>
+      <div class="card"><h3>An engine runs between reports</h3><p>Each report feeds a running demand motion, not a one-time post. The activity doesn't stop when the PDF ships.</p></div>
+      <div class="card"><h3>Sales pulls it through</h3><p>Built with your sales lead and shipped as rep-ready stats and talk tracks, so it gets used instead of shelved.</p></div>
+    </div>
+    <div class="stat"><span class="n">60-70%</span><p>of B2B marketing content goes unused by sales. Building the asset with sales, and for sales, keeps this one off the shelf. Forrester.</p></div>
+  </section>
+
+  <!-- CADENCE -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>The cadence</div>
+    <h2 class="sh">One report owns the category. <span class="o">The rest go narrow.</span></h2>
+    <p class="lede">We recommend one marquee study a year, category-wide, the benchmark the whole market cites. Then we niche down: sharp cross-cuts of a single ICP and persona. The expensive part for a survey shop built for big studies, the cheap part for us.</p>
+    <div class="card accent stack" style="margin-top:clamp(22px,2.6vw,30px)">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span class="pill bg-orange" style="color:#fff;font-size:15px;box-shadow:none">MARQUEE</span>
+        <span class="mono" style="font-size:13px;color:var(--soft)">1× / YEAR</span>
+      </div>
+      <h3 style="margin-top:14px">The category, once a year</h3>
+      <p>Broad, citable, the report everyone references. The flagship you own and repeat.</p>
+    </div>
+    <div class="row"><span class="pill bg-yellow" style="color:var(--ink);font-size:15px;box-shadow:none">CROSS-CUTS</span><span style="font-size:clamp(14.5px,1.5vw,16px);color:#444">Niched to one ICP × persona. Sharp, cheap to run, as many as the quarter needs.</span></div>
+    <div class="g3" style="margin-top:14px">
+      <div class="card bg-fill"><div class="cap">ICP × persona</div><div style="font-size:clamp(16px,1.6vw,18px);font-weight:700;font-family:'Bricolage Grotesque';margin-top:6px">RevOps leaders, mid-market</div></div>
+      <div class="card bg-fill"><div class="cap">ICP × persona</div><div style="font-size:clamp(16px,1.6vw,18px);font-weight:700;font-family:'Bricolage Grotesque';margin-top:6px">Security buyers, enterprise</div></div>
+      <div class="card bg-fill"><div class="cap">ICP × persona</div><div style="font-size:clamp(16px,1.6vw,18px);font-weight:700;font-family:'Bricolage Grotesque';margin-top:6px">Founders, seed to A</div></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>What it costs</div>
+    <h2 class="sh">Buy the research. <span class="o">Have us run it if you want.</span></h2>
+    <p class="small" style="margin-top:12px">Panel cost passed through at cost, no markup. Media and ad spend on you.</p>
+    <div class="gp" style="margin-top:clamp(22px,2.6vw,28px);align-items:stretch">
+      <div class="card" style="border-style:dashed">
+        <div class="cap">Proof of concept · once</div>
+        <h3 style="font-size:clamp(22px,2.4vw,26px);margin-top:5px">Trial</h3>
+        <p class="small" style="font-style:italic;margin-top:9px">A survey of your own customers. Quick and cheap to field, the motion proven on a small scale first.</p>
+        <ul class="b"><li>Surveys your existing customers, no panel to buy</li><li>Cheaper and faster to field than a market study</li><li>A working report in 30 days, money-back if I miss the date</li></ul>
+        <div class="price"><span class="pill bg-peach" style="color:var(--ink)">$10K · once</span></div>
+      </div>
+      <div class="card">
+        <div class="hd bg-orange"><span class="cap" style="color:#fff">The core · stands alone</span></div>
+        <h3 style="font-size:clamp(22px,2.4vw,26px)">Research + materials</h3>
+        <p class="small" style="font-style:italic;margin-top:9px">The report plus a robust set of materials to run it yourself. Buy this and stop here.</p>
+        <ul class="b"><li>The designed report, built for marketing and sales both</li><li>A robust set of marketing and sales materials to use or build from</li><li>A repeat survey that builds trend lines you own</li><li>$15K is our fee. The research panel is passed to you at cost, no markup.</li></ul>
+        <div class="price"><span class="pill bg-orange" style="color:#fff">from $15K / report</span><div class="passnote">+ panel cost, passed through at cost</div></div>
+      </div>
+      <div class="card">
+        <div class="hd bg-teal"><span class="cap">Optional · we run it</span></div>
+        <h3 style="font-size:clamp(22px,2.4vw,26px)">Done-for-you</h3>
+        <p class="small" style="font-style:italic;margin-top:9px">The robust version, run for you, so your team stays on selling.</p>
+        <ul class="b"><li>The demand engine: social, ads, email, LinkedIn outbound</li><li>Enablement sessions that land it in deals</li><li>A co-presented webinar per cycle</li><li>PR run end to end: I find and manage the agent, you stay out of it</li></ul>
+        <div class="price"><span class="pill bg-teal" style="color:var(--ink)">from +$3K / quarter</span><div class="passnote">+ panel and media, passed through at cost</div></div>
+      </div>
+    </div>
+    <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#333"><b>Why we even offer it:</b> we only run the done-for-you work because we stand behind the research. Take the materials and do it yourself, or hand us the execution. The research is the same either way.</p></div>
+  </section>
+
+  <!-- THE ENGINE -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>The engine</div>
+    <h2 class="sh">The report is the fuel. <span class="o">The engine runs all year.</span></h2>
+    <p class="lede">Not a PDF a few times a year. An always-on demand motion that proprietary data keeps loaded. This is what makes done-for-you recurring instead of one-off.</p>
+    <div class="engine">
+      <div class="card bg-orange" style="justify-content:center;text-align:center;color:#fff">
+        <div class="cap" style="color:#ffe9e2">Each cycle</div>
+        <h3 style="font-size:clamp(22px,2.4vw,26px);color:#fff;margin-top:8px">The report</h3>
+        <p style="color:#ffe9e2">primary data, designed</p>
+      </div>
+      <div class="g2" style="margin-top:0">
+        <div class="card"><div class="cap">Always on</div><h3 style="font-size:clamp(17px,1.7vw,19px);margin-top:6px">Paid + organic social</h3><p>Concepts cut to data slices, resized, ready to run.</p></div>
+        <div class="card"><div class="cap">Always on</div><h3 style="font-size:clamp(17px,1.7vw,19px);margin-top:6px">Email + nurture</h3><p>A sequence the findings carry, client-facing or cold.</p></div>
+        <div class="card"><div class="cap">Always on</div><h3 style="font-size:clamp(17px,1.7vw,19px);margin-top:6px">LinkedIn automation</h3><p>1:1 outreach to a built ICP list, the report as the opener.</p></div>
+        <div class="card"><div class="cap">Per cycle</div><h3 style="font-size:clamp(17px,1.7vw,19px);margin-top:6px">Search, GEO, AEO</h3><p>The report as the page the answer engines cite.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKEDIN + PAID -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>LinkedIn + paid</div>
+    <h2 class="sh">The report finds the buyer. <span class="o">On autopilot.</span></h2>
+    <p class="lede">Start with managed 1:1 outreach. Layer paid reach on top as it earns its keep. Each level sits on the one before it. Media and ad spend are separate and on you.</p>
+    <div class="gp" style="align-items:stretch">
+      <div class="card accent">
+        <div class="hd bg-orange"><span class="cap" style="color:#fff">Base · per seat</span></div>
+        <h3 style="font-size:clamp(18px,1.8vw,19px)">Outreach automation</h3>
+        <ul class="b"><li>Build a custom ICP list, one-time</li><li>Automated 1:1 outreach from your seats, the report as the opener</li><li>Matched accounts handed to sales</li></ul>
+        <div class="price"><span class="pill bg-orange" style="color:#fff;font-size:16px">$250 / seat / mo</span><div class="passnote">4-seat min ($3K/q) · + $2,500 list build</div></div>
+      </div>
+      <div class="card">
+        <div class="hd bg-sky"><span class="cap">Add · +$500 / mo</span></div>
+        <h3 style="font-size:clamp(18px,1.8vw,19px)">Paid ad management</h3>
+        <p>LinkedIn conversation ads and Meta display ads, managed end to end, promoting the ebook to the same buyers the outreach is reaching.</p>
+        <div class="price"><span class="pill bg-sky" style="color:var(--ink);font-size:16px">+$500 / mo</span></div>
+      </div>
+      <div class="card">
+        <div class="hd bg-paleyellow"><span class="cap">Add · +$1,500 / mo</span><span class="badge ink">MONTH 6+</span></div>
+        <h3 style="font-size:clamp(18px,1.8vw,19px)">Multi-channel orchestration</h3>
+        <p>Identity resolution and audience construction across LinkedIn, Meta, Reddit, and YouTube / Video 360. The full programmatic build around the research.</p>
+        <div class="price"><span class="pill bg-paleyellow" style="color:var(--ink);font-size:16px">+$1,500 / mo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAST START -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>The fast start</div>
+    <h2 class="sh">The kickoff is for strategy. <span class="o">We do the basics first.</span></h2>
+    <p class="lede">In the first week, before we sit down, you get three foundations to review on your own time. So the kickoff is spent on content strategy, not getting us up to speed.</p>
+    <div class="g3">
+      <div class="card"><div class="cap">Week one · 01</div><h3 style="font-size:clamp(18px,1.8vw,19px);margin-top:6px">Competitive landscape map</h3><p>A content-focused read of who else is publishing in your space, and where the open lanes are.</p></div>
+      <div class="card"><div class="cap">Week one · 02</div><h3 style="font-size:clamp(18px,1.8vw,19px);margin-top:6px">Citable public data</h3><p>A compilation of the public numbers worth building on, sourced and vetted, the weak ones flagged.</p></div>
+      <div class="card"><div class="cap">Week one · 03</div><h3 style="font-size:clamp(18px,1.8vw,19px);margin-top:6px">Offer and positioning</h3><p>A document on how we read your offer and where you sit, so we start the work already aligned.</p></div>
+    </div>
+    <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#333"><b>Reviewed async.</b> You read and comment on your own time. By the time we meet, the basics are settled and the kickoff is all content strategy.</p></div>
+  </section>
+
+  <!-- PAYOFF -->
+  <section class="reveal">
+    <div class="eyebrow"><span class="sq"></span>The payoff</div>
+    <h2 class="sh">Year one earns trust. <span class="o">Year three can't be copied.</span></h2>
+    <div class="g3">
+      <div class="card"><div class="cap">Year 1</div><h3 style="font-size:clamp(18px,1.8vw,19px);margin-top:6px">The first survey</h3><p>Primary data, designed and promoted. Credible from day one.</p></div>
+      <div class="card"><div class="cap">Year 2</div><h3 style="font-size:clamp(18px,1.8vw,19px);margin-top:6px">The same study, again</h3><p>Now there are trend lines. Year-over-year movement nobody else can show. This earns the links and the press.</p></div>
+      <div class="card accent"><div class="cap" style="color:var(--orange)">Year 3 and on</div><h3 style="font-size:clamp(18px,1.8vw,19px);margin-top:6px">The category's benchmark</h3><p>A multi-year dataset refreshed every cycle. A competitor starting now is three years behind data they never collected.</p></div>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section style="border-top:none">
+    <div class="close">
+      <div class="eyebrow" style="color:#9a9a9a;margin-bottom:20px"><span class="sq" style="background:var(--orange);border-color:var(--orange)"></span>What's next</div>
+      <h2>Start with one <span class="o">report.</span></h2>
+      <p>$10,000, one asset, 30 days. If it lands, it becomes a cadence and an engine: a survey you repeat, a demand motion that runs all year, and a dataset that gets harder to copy every cycle.</p>
+      <a class="cta" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20Let's%20talk">Email Jacob</a>
+      <div class="closefoot">Jacob Nikolau · TrueRead · jacob@trueread.co</div>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap"><span class="mono">TrueRead · trueread.co</span></div></footer>
+
+<script>
+  (function(){
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')}); return;
+    }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.08, rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
