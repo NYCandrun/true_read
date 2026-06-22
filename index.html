@@ -169,7 +169,9 @@
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto}}
   a:focus-visible,.btn:focus-visible,.navcta:focus-visible,.navlink:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
   .bookwrap{margin-top:clamp(22px,2.8vw,32px);border:var(--bd);border-radius:clamp(16px,1.8vw,20px);box-shadow:var(--sh);background:#fff;overflow:hidden}
-  .bookwrap iframe{display:block;width:100%;min-height:600px;border:0}
+  .bookwrap iframe{display:block;width:100%;border:0;height:1500px}
+  @media(min-width:600px){ .bookwrap iframe{height:1180px} }
+  @media(min-width:900px){ .bookwrap iframe{height:980px} }
 </style>
 </head>
 <body>
@@ -479,7 +481,7 @@
     <h2 class="sh">Book a 30-minute <span class="o">strategy call.</span></h2>
     <p class="lede">Pick a time that works. We'll talk through your category, the research that would land, and how the motion would run. No prep needed.</p>
     <div class="bookwrap">
-      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1K-6lR3v5kTs8H0FUINIQd9GmOf66cNO1thCWsZFL2MFLd1hFnQ72sj8zU0n5MbriLXO-H7A6S?gv=true" style="border:0" width="100%" height="600" frameborder="0" title="Book a 30-minute strategy call"></iframe>
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1K-6lR3v5kTs8H0FUINIQd9GmOf66cNO1thCWsZFL2MFLd1hFnQ72sj8zU0n5MbriLXO-H7A6S?gv=true" style="border:0" width="100%" height="1500" frameborder="0" title="Book a 30-minute strategy call"></iframe>
     </div>
   </section>
 
