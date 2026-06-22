@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0A0A0A">
-<title>TrueRead — Research the field hasn't published.</title>
-<meta name="description" content="Original B2B research built for demand gen. One report marketing runs and sales cites, plus a year-round engine to put it to work.">
+<title>TrueRead — Original B2B research, built for demand gen</title>
+<meta name="description" content="TrueRead fields original research on your real buyers and turns it into a demand engine marketing runs and sales cites. Start with one report: $10K, 30 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
@@ -20,31 +20,67 @@
   html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45}
   .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(18px,5vw,56px);padding-left:max(clamp(18px,5vw,56px),env(safe-area-inset-left));padding-right:max(clamp(18px,5vw,56px),env(safe-area-inset-right))}
+  .mono{font-family:'JetBrains Mono'} .o{color:var(--orange)}
+  h1,h2,h3{font-family:'Bricolage Grotesque','Inter',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02;margin:0}
 
-  /* header */
-  header{position:sticky;top:0;z-index:50;background:rgba(236,234,228,.85);backdrop-filter:saturate(1.2) blur(9px);border-bottom:var(--bd)}
-  .bar{display:flex;align-items:center;justify-content:space-between;height:clamp(56px,7vw,72px)}
-  .brand{display:flex;align-items:center;gap:10px}
+  /* ===== nav ===== */
+  header{position:sticky;top:0;z-index:60;background:rgba(236,234,228,.88);backdrop-filter:saturate(1.2) blur(9px);border-bottom:var(--bd)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:clamp(58px,7vw,74px)}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
   .mark{width:clamp(26px,3.3vw,30px);height:clamp(26px,3.3vw,30px);border:var(--bd2);border-radius:7px;background:var(--ink);position:relative;flex:none}
   .mark::after{content:"";position:absolute;inset:22%;background:var(--orange);border-radius:3px}
   .brand b{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(19px,2.3vw,22px);letter-spacing:-.01em}
-  .mailtop{font-family:'JetBrains Mono';font-size:clamp(12px,1.4vw,13px);font-weight:500;letter-spacing:.04em;color:var(--ink);text-decoration:none;border:var(--bd2);border-radius:10px;padding:8px 12px;background:var(--yellow);box-shadow:var(--shs)}
+  .nav{display:flex;align-items:center;gap:clamp(14px,2vw,26px)}
+  .navlink{font-family:'JetBrains Mono';font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent;cursor:pointer}
+  .navlink:hover{border-bottom-color:var(--ink)}
+  .navlink.active{border-bottom-color:var(--orange)}
+  .navcta{font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:#fff;background:var(--orange);text-decoration:none;padding:9px 16px;border:var(--bd2);border-radius:11px;box-shadow:var(--shs)}
+  .navcta:hover{transform:translate(-1px,-1px)}
+  .hamb{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:8px;cursor:pointer}
+  .hamb span{width:24px;height:3px;background:var(--ink);border-radius:2px;transition:.2s}
+  .mobilemenu{display:none;flex-direction:column;gap:4px;padding:14px clamp(18px,5vw,56px) 20px;border-bottom:var(--bd);background:var(--paper)}
+  .mobilemenu a{font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;color:var(--ink);text-decoration:none;padding:11px 0;border-bottom:1px dashed rgba(10,10,10,.2);cursor:pointer}
+  .mobilemenu a.mcta{color:#fff;background:var(--orange);border:var(--bd2);border-radius:11px;box-shadow:var(--shs);text-align:center;padding:13px;margin-top:8px;border-bottom:var(--bd2)}
+  @media(max-width:720px){
+    .nav{display:none} .hamb{display:flex}
+    header.open .mobilemenu{display:flex}
+    header.open .hamb span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+    header.open .hamb span:nth-child(2){opacity:0}
+    header.open .hamb span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  }
 
-  /* sections + type */
-  section{padding:clamp(40px,6vw,86px) 0}
-  section + section{border-top:1px dashed rgba(10,10,10,.18)}
+  /* ===== views ===== */
+  .view{display:none}
+  .view.active{display:block}
+
+  /* ===== sections / type ===== */
+  section{padding:clamp(44px,6vw,90px) 0}
+  .view-process section + section{border-top:1px dashed rgba(10,10,10,.18)}
   .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:clamp(12px,1.4vw,13px);font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:clamp(14px,1.6vw,18px)}
   .eyebrow .sq{width:12px;height:12px;border:2px solid var(--ink);border-radius:3px;background:var(--orange)}
-  h1,h2,h3{font-family:'Bricolage Grotesque','Inter',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02;margin:0}
-  .htitle{font-size:clamp(40px,7.6vw,80px);line-height:.98}
-  h2.sh{font-size:clamp(27px,4.3vw,46px);line-height:1.03}
-  .o{color:var(--orange)}
+  h2.sh{font-size:clamp(28px,4.4vw,48px);line-height:1.02}
   .lede{font-size:clamp(16.5px,1.55vw,21px);color:#2c2c2c;margin:clamp(14px,1.6vw,18px) 0 0;max-width:840px}
-  .mono{font-family:'JetBrains Mono'}
   .small{font-size:clamp(13px,1.4vw,14.5px);color:#3a3a3a}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
 
-  /* grids (mobile-first; columns step up at breakpoints) */
-  .g2,.g3,.g4,.gp{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,18px);margin-top:clamp(22px,2.6vw,30px)}
+  .card{border:var(--bd);border-radius:clamp(16px,1.8vw,20px);box-shadow:var(--sh);background:var(--card);padding:clamp(19px,2.1vw,25px);display:flex;flex-direction:column}
+  .card h3{font-size:clamp(18px,1.85vw,23px)}
+  .card p{margin:9px 0 0;font-size:clamp(14.5px,1.4vw,15.5px);color:#333}
+  .cap{font-family:'JetBrains Mono';font-size:clamp(11px,1.25vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  .accent{box-shadow:6px 7px 0 var(--orange)}
+  .bg-orange{background:var(--orange)} .bg-peach{background:var(--peach)} .bg-sky{background:var(--sky)}
+  .bg-yellow{background:var(--yellow)} .bg-paleyellow{background:var(--paleyellow)} .bg-teal{background:var(--teal)} .bg-fill{background:var(--fill)}
+  .ink{background:var(--ink);color:#EDEDED;border-color:var(--ink)} .ink p{color:#EDEDED}
+  .hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:calc(-1 * clamp(19px,2.1vw,25px)) calc(-1 * clamp(19px,2.1vw,25px)) 15px;padding:12px clamp(19px,2.1vw,25px);border-bottom:var(--bd);border-radius:clamp(13px,1.5vw,17px) clamp(13px,1.5vw,17px) 0 0}
+  .badge{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;padding:3px 9px;border-radius:6px;white-space:nowrap}
+  ul.b{list-style:none;margin:13px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  ul.b li{position:relative;padding-left:19px;font-size:clamp(14px,1.4vw,15px);color:#2f2f2f;line-height:1.4}
+  ul.b li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+  .tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:clamp(18px,2.2vw,24px)}
+  .tag{font-family:'JetBrains Mono';font-size:clamp(11.5px,1.3vw,12.5px);letter-spacing:.06em;text-transform:uppercase;padding:7px 11px;border:var(--bd2);border-radius:9px;background:#fff;box-shadow:var(--shs)}
+
+  /* grids */
+  .g2,.g3,.g4,.gp{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,18px);margin-top:clamp(24px,2.8vw,32px)}
   @media(min-width:620px){ .g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:1fr 1fr} }
   @media(min-width:560px){ .g4{grid-template-columns:1fr 1fr} }
   @media(min-width:880px){ .gp{grid-template-columns:1fr 1fr 1fr} }
@@ -52,49 +88,69 @@
   @media(min-width:1080px){ .g4{grid-template-columns:1fr 1fr 1fr 1fr} }
   .stack{margin-top:clamp(14px,1.6vw,18px)}
 
-  .tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:clamp(18px,2.2vw,24px)}
-  .tag{font-family:'JetBrains Mono';font-size:clamp(11.5px,1.3vw,12.5px);letter-spacing:.06em;text-transform:uppercase;padding:7px 11px;border:var(--bd2);border-radius:9px;background:#fff;box-shadow:var(--shs)}
+  /* buttons */
+  .btn{display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(15px,1.5vw,17px);padding:14px clamp(18px,2.4vw,26px);border:var(--bd);border-radius:14px;box-shadow:var(--shs);text-decoration:none;cursor:pointer;transition:transform .12s ease}
+  .btn:hover{transform:translate(-2px,-2px)}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-secondary{background:#fff;color:var(--ink)}
+  .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(22px,3vw,30px)}
+  .ctas.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:540px}
+  .ctas.two .btn{width:100%;text-align:center}
+  @media(max-width:460px){ .ctas.two{grid-template-columns:1fr;max-width:380px} }
 
-  .card{border:var(--bd);border-radius:clamp(16px,1.8vw,20px);box-shadow:var(--sh);background:var(--card);padding:clamp(18px,2vw,24px);display:flex;flex-direction:column}
-  .card h3{font-size:clamp(18px,1.8vw,23px)}
-  .card p{margin:9px 0 0;font-size:clamp(14.5px,1.4vw,15.5px);color:#333}
-  .cap{font-family:'JetBrains Mono';font-size:clamp(11px,1.25vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
-  .hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:calc(-1 * clamp(18px,2vw,24px)) calc(-1 * clamp(18px,2vw,24px)) 15px;padding:12px clamp(18px,2vw,24px);border-bottom:var(--bd);border-radius:clamp(13px,1.5vw,17px) clamp(13px,1.5vw,17px) 0 0}
-  .badge{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;padding:3px 9px;border-radius:6px;white-space:nowrap}
+  /* hero + signature */
+  .hero{display:grid;grid-template-columns:1fr;gap:clamp(26px,3vw,40px);align-items:center;padding-top:clamp(34px,5vw,64px)}
+  @media(min-width:820px){.hero{grid-template-columns:1.15fr .85fr}}
+  .htitle{font-size:clamp(42px,7.4vw,82px);line-height:.97}
+  .trust{margin-top:clamp(22px,3vw,30px);font-size:14px;color:var(--soft);max-width:560px;display:flex;gap:10px;align-items:flex-start}
+  .trust .sq{width:11px;height:11px;border-radius:3px;background:var(--orange);flex:none;margin-top:4px}
+  .signature{border:var(--bd);border-radius:18px;box-shadow:var(--sh);overflow:hidden;background:#fff}
+  .signature .top{height:clamp(26px,3vw,34px);border-bottom:var(--bd)}
+  .bars{display:flex;align-items:flex-end;justify-content:space-around;gap:clamp(10px,1.4vw,14px);height:clamp(140px,18vw,210px);padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,24px) 0}
+  .bars span{flex:1;border:var(--bd2);border-bottom:none}
+  .signature .lbl{border-top:var(--bd);padding:11px clamp(14px,1.8vw,20px);font-family:'JetBrains Mono';font-size:clamp(11px,1.3vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
 
-  .bg-orange{background:var(--orange)} .bg-peach{background:var(--peach)} .bg-sky{background:var(--sky)}
-  .bg-yellow{background:var(--yellow)} .bg-paleyellow{background:var(--paleyellow)} .bg-teal{background:var(--teal)}
-  .bg-coral{background:var(--coral)} .bg-mint{background:var(--mint)} .bg-fill{background:var(--fill)}
-  .ink{background:var(--ink);color:#EDEDED;border-color:var(--ink)} .ink p{color:#EDEDED}
-  .accent{box-shadow:6px 7px 0 var(--orange)}
+  /* home stat strip */
+  .strip{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,18px);margin-top:clamp(28px,3.5vw,44px)}
+  @media(min-width:760px){.strip{grid-template-columns:1fr 1fr 1fr}}
+  .hstat{background:var(--ink);color:#fff;border-radius:18px;padding:clamp(20px,2.4vw,28px)}
+  .hstat .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,5vw,52px);color:var(--yellow);line-height:1}
+  .hstat p{margin:10px 0 0;font-size:clamp(14px,1.4vw,15.5px);color:#E2E2E2}
 
-  ul.b{list-style:none;margin:13px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
-  ul.b li{position:relative;padding-left:19px;font-size:clamp(14px,1.4vw,15px);color:#2f2f2f;line-height:1.4}
-  ul.b li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
-
+  /* process inline stat */
   .stat{display:flex;align-items:center;gap:clamp(14px,1.8vw,18px);margin-top:clamp(16px,2vw,22px);background:var(--ink);color:#EDEDED;border-radius:16px;padding:clamp(15px,1.8vw,18px) clamp(16px,2vw,22px)}
   .stat .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(24px,3.2vw,32px);color:var(--yellow);line-height:1;flex:none}
   .stat p{margin:0;font-size:clamp(13.5px,1.4vw,15.5px);color:#E4E4E4}
 
+  /* steps / seemore */
+  .step .num{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,3.6vw,42px);color:var(--orange);line-height:1}
+  .step h3{margin-top:10px;font-size:clamp(19px,1.9vw,22px)}
+  .seemore{display:inline-flex;align-items:center;gap:8px;margin-top:clamp(22px,3vw,30px);font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(16px,1.7vw,19px);color:var(--ink);text-decoration:none;cursor:pointer;border-bottom:3px solid var(--orange);padding-bottom:3px}
+
+  /* offer band */
+  .offer{background:var(--yellow);border:var(--bd);border-radius:clamp(18px,2.4vw,26px);box-shadow:var(--sh);padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+  @media(min-width:820px){.offer{grid-template-columns:1.4fr 1fr}}
+  .offer h2{font-size:clamp(30px,4.2vw,48px)}
+  .offer ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .offer li{position:relative;padding-left:20px;font-size:clamp(15px,1.5vw,16.5px);font-weight:600}
+  .offer li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+  .offer .box{background:#fff;border:var(--bd);border-radius:16px;box-shadow:var(--shs);padding:clamp(20px,2.4vw,28px);text-align:center}
+  .offer .box .big{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(40px,5.5vw,60px);line-height:1}
+
+  /* process pricing + engine */
   .price{margin-top:auto;padding-top:16px}
   .pill{display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(16px,1.8vw,20px);padding:9px 16px;border:var(--bd);border-radius:13px;box-shadow:var(--shs)}
   .passnote{font-family:'JetBrains Mono';font-size:11.5px;color:var(--soft);margin-top:9px}
-
-  /* hero + engine layouts */
-  .hero{display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,34px);align-items:center}
-  @media(min-width:760px){ .hero{grid-template-columns:1.2fr .9fr} }
-  .signature{border:var(--bd);border-radius:18px;box-shadow:var(--sh);overflow:hidden;background:#fff}
-  .signature .top{height:clamp(24px,3vw,32px);border-bottom:var(--bd)}
-  .bars{display:flex;align-items:flex-end;justify-content:space-around;gap:clamp(10px,1.4vw,14px);height:clamp(120px,17vw,200px);padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,24px) 0}
-  .bars span{flex:1;border:var(--bd2);border-bottom:none}
-  .signature .lbl{border-top:var(--bd);padding:10px clamp(14px,1.8vw,20px);font-family:'JetBrains Mono';font-size:clamp(11px,1.3vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
-
   .engine{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,18px);margin-top:clamp(22px,2.6vw,30px)}
   @media(min-width:820px){ .engine{grid-template-columns:.7fr 1.3fr} }
-
   .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
 
-  /* close */
+  /* home close (centered) */
+  .hclose{background:var(--ink);color:#fff;border-radius:clamp(20px,2.4vw,26px);padding:clamp(38px,5.5vw,72px) clamp(24px,4vw,56px);text-align:center}
+  .hclose h2{font-size:clamp(34px,5.4vw,60px);line-height:1;color:#fff}
+  .hclose p{color:#CFCFCF;font-size:clamp(16px,1.7vw,19px);margin:18px auto 0;max-width:620px}
+
+  /* process close (left) */
   .close{background:var(--ink);color:#fff;border-radius:clamp(20px,2.4vw,26px);padding:clamp(34px,5vw,64px) clamp(24px,4vw,56px);margin-top:18px}
   .close h2{font-size:clamp(38px,5.6vw,66px);line-height:1;color:#fff}
   .close p{color:#CFCFCF;font-size:clamp(16px,1.7vw,19px);margin:20px 0 0;max-width:640px}
@@ -102,53 +158,153 @@
   .cta:hover{transform:translate(-2px,-2px)}
   .closefoot{margin-top:24px;font-family:'JetBrains Mono';font-size:clamp(12px,1.4vw,13px);letter-spacing:.08em;color:#9a9a9a;text-transform:uppercase}
 
-  footer{padding:clamp(26px,4vw,40px) 0 calc(clamp(30px,4vw,44px) + env(safe-area-inset-bottom));text-align:center}
-  footer .mono{font-size:clamp(11.5px,1.3vw,12.5px);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  footer{border-top:var(--bd);padding:clamp(28px,4vw,44px) 0 calc(clamp(30px,4vw,44px) + env(safe-area-inset-bottom))}
+  .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+  .foot .mono{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .foot a{color:var(--ink);text-decoration:none;font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.06em;cursor:pointer}
 
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto}}
-  a:focus-visible,.cta:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+  a:focus-visible,.btn:focus-visible,.navcta:focus-visible,.navlink:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+  .bookwrap{margin-top:clamp(22px,2.8vw,32px);border:var(--bd);border-radius:clamp(16px,1.8vw,20px);box-shadow:var(--sh);background:#fff;overflow:hidden}
+  .bookwrap iframe{display:block;width:100%;min-height:600px;border:0}
 </style>
 </head>
 <body>
 
-<header>
+<header id="hdr">
   <div class="wrap bar">
-    <div class="brand"><span class="mark"></span><b>TrueRead</b></div>
-    <a class="mailtop" href="mailto:jacob@trueread.co">jacob@trueread.co</a>
+    <a class="brand" href="#home" data-view="home"><span class="mark"></span><b>TrueRead</b></a>
+    <nav class="nav">
+      <a href="#home" class="navlink" data-view="home">Home</a>
+      <a href="#process" class="navlink" data-view="process">Our process</a>
+      <a href="#process" data-goto="book" class="navcta">Book a 30-min call</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobilemenu" id="mmenu">
+    <a href="#home" data-view="home">Home</a>
+    <a href="#process" data-view="process">Our process</a>
+    <a class="mcta" href="#process" data-goto="book">Book a 30-min call</a>
   </div>
 </header>
 
-<main class="wrap">
+<!-- ============================= HOME VIEW ============================= -->
+<main class="view view-home active" id="view-home">
 
-  <!-- HERO -->
-  <section style="padding-top:clamp(36px,5vw,72px)">
+  <section class="wrap" style="padding-bottom:0">
     <div class="hero">
       <div>
-        <div class="tags">
-          <span class="tag bg-peach">Original research</span>
-          <span class="tag bg-sky">Demand gen</span>
-          <span class="tag bg-paleyellow">Sales enablement</span>
+        <div class="eyebrow"><span class="sq"></span>Original research · demand gen · sales enablement</div>
+        <h1 class="htitle">Own the data your category <span class="o">doesn't have yet.</span></h1>
+        <p class="lede">TrueRead fields original research on your real buyers, then turns it into a demand engine marketing runs and sales cites in deals. The proprietary numbers that still earn attention now that AI made everything else identical.</p>
+        <div class="ctas two">
+          <a class="btn btn-secondary" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">Email for more information</a>
+          <a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a>
         </div>
-        <h1 class="htitle">Research the field<br><span class="o">hasn't published.</span></h1>
-        <p class="lede">One report, built on real buyer data, that marketing runs for demand and sales cites in deals. Not another blog post. The proprietary numbers your category doesn't have yet, and a year-round engine to put them to work.</p>
+        <a class="seemore" href="#process" data-view="process" style="margin-top:16px">See how it works →</a>
+        <div class="trust"><span class="sq"></span><span>Built by the founding marketer behind category-defining research at Mosaic, NovoEd, and Mursion.</span></div>
       </div>
       <div class="signature">
         <div class="top bg-orange"></div>
-        <div class="bars">
-          <span class="bg-fill" style="height:38%"></span>
-          <span class="bg-peach" style="height:56%"></span>
-          <span class="bg-yellow" style="height:76%"></span>
-          <span class="bg-orange" style="height:100%"></span>
-        </div>
+        <div class="bars"><span class="bg-fill" style="height:36%"></span><span class="bg-peach" style="height:55%"></span><span class="bg-yellow" style="height:76%"></span><span class="bg-orange" style="height:100%"></span></div>
         <div class="lbl">Your data, compounding</div>
       </div>
     </div>
   </section>
 
-  <!-- THE SHIFT -->
-  <section class="reveal">
+  <section class="wrap reveal" style="padding-top:clamp(30px,4vw,52px)">
+    <div class="strip">
+      <div class="hstat"><div class="n">51%</div><p>of B2B software buyers now start research in an AI chatbot, up from 29% a year earlier. Generic content is invisible there. Original data is what gets cited.</p></div>
+      <div class="hstat"><div class="n">30%+</div><p>inbound growth driven by thought leadership in a prior B2B SaaS role. This is the motion, not a theory.</p></div>
+      <div class="hstat"><div class="n">3 yrs</div><p>head start a repeated study builds. A competitor starting today is years behind data they never began collecting.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="eyebrow"><span class="sq"></span>What you get</div>
+    <h2 class="sh">One report that does <span class="o">three jobs.</span></h2>
+    <p class="lede">Not a whitepaper that ships and dies. A research asset built from the first question to generate demand and close deals.</p>
+    <div class="g3">
+      <div class="card accent"><div class="cap">Authority</div><h3>Research that converts</h3><p>Primary data fielded on your real buyers, designed for demand gen, not a literature review. The numbers only you have.</p></div>
+      <div class="card"><div class="cap">Demand</div><h3>A demand engine, not a PDF</h3><p>Social, ads, email, search, and a webinar, all running off the report. An always-on motion, not a one-time post.</p></div>
+      <div class="card"><div class="cap">Pipeline</div><h3>Sales ammo reps cite</h3><p>Findings cut to slides and talk tracks, built with your sales lead, so the research lands in live deals instead of a shared drive.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="eyebrow"><span class="sq"></span>How it works</div>
+    <h2 class="sh">Field it. Run it. <span class="o">Compound it.</span></h2>
+    <div class="g3">
+      <div class="card step"><div class="num">01</div><h3>Field the research</h3><p>A survey of your real buyers, plus an outside-in study. Original data nobody else has collected, with the panel passed through at cost.</p></div>
+      <div class="card step"><div class="num">02</div><h3>Turn it into a motion</h3><p>The report becomes campaigns and sales enablement. Run it yourself with the materials included, or have us run the whole motion.</p></div>
+      <div class="card step"><div class="num">03</div><h3>Compound it</h3><p>Repeat the study each year. Trend lines build a benchmark the market cites and competitors cannot copy.</p></div>
+    </div>
+    <a class="seemore" href="#process" data-view="process">See the full process →</a>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="eyebrow"><span class="sq"></span>Why us</div>
+    <h2 class="sh">We've built this exact motion. <span class="o">Many times.</span></h2>
+    <p class="lede">Original research, the demand gen that runs off it, and the enablement underneath. Every piece of what TrueRead sells has shipped before, in hard technical B2B categories.</p>
+    <div class="g3">
+      <div class="card"><div class="cap">Original research</div><p>Designed, fielded, and wrote <em>The State of AI in A&amp;E 2026</em>, the report that made Mosaic its category's AI authority.</p></div>
+      <div class="card"><div class="cap">Demand that converts</div><p>Drove 30%+ inbound growth attributed to thought leadership at NovoEd, selling into Fortune 500 and regulated buyers.</p></div>
+      <div class="card"><div class="cap">Proof from real calls</div><p>Built an AI pipeline on Gong and Claude that mines every sales call for the exact customer language and proof points.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="offer">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px"><span class="sq" style="background:var(--ink)"></span>Start here</div>
+        <h2>Start with one report.</h2>
+        <ul>
+          <li>A survey of your own customers, no panel to buy</li>
+          <li>A working report in 30 days, money-back if I miss the date</li>
+          <li>Proof of the motion before any bigger commitment</li>
+        </ul>
+        <div class="ctas two">
+          <a class="btn btn-secondary" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">Email for more information</a>
+          <a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a>
+        </div>
+        <a class="seemore" href="#process" data-goto="pricing" style="margin-top:16px">See full pricing →</a>
+      </div>
+      <div class="box"><div class="cap">Trial · proof of concept</div><div class="big">$10K</div><p style="margin:8px 0 0;font-size:15px;color:#333">one report · 30 days</p></div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="hclose">
+      <div class="eyebrow center" style="color:#9a9a9a;margin-bottom:18px;justify-content:center"><span class="sq"></span>Ready when you are</div>
+      <h2>Become the source<br>your market <span class="o">cites.</span></h2>
+      <p>One report to start. If it lands, it becomes a cadence, an engine, and a dataset that gets harder to copy every cycle.</p>
+      <div class="ctas two" style="margin-left:auto;margin-right:auto"><a class="btn btn-secondary" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">Email for more information</a><a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= PROCESS VIEW ============================= -->
+<main class="view view-process" id="view-process">
+
+  <section class="wrap" style="padding-top:clamp(36px,5vw,72px)">
+    <div class="hero">
+      <div>
+        <div class="tags"><span class="tag bg-peach">Original research</span><span class="tag bg-sky">Demand gen</span><span class="tag bg-paleyellow">Sales enablement</span></div>
+        <h1 class="htitle">Research the field<br><span class="o">hasn't published.</span></h1>
+        <p class="lede">One report, built on real buyer data, that marketing runs for demand and sales cites in deals. Not another blog post. The proprietary numbers your category doesn't have yet, and a year-round engine to put them to work.</p>
+      </div>
+      <div class="signature">
+        <div class="top bg-orange"></div>
+        <div class="bars"><span class="bg-fill" style="height:38%"></span><span class="bg-peach" style="height:56%"></span><span class="bg-yellow" style="height:76%"></span><span class="bg-orange" style="height:100%"></span></div>
+        <div class="lbl">Your data, compounding</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The shift</div>
     <h2 class="sh">AI made content infinite. <span class="o">And identical.</span></h2>
     <p class="lede">Buyers open an AI chat before they open Google. Generic posts and listicles are free to make and free to ignore. The one thing a model can't generate is data nobody has collected yet. Primary research is what still gets cited, linked, and trusted.</p>
@@ -159,28 +315,18 @@
     <div class="stat"><span class="n">51%</span><p>of B2B software buyers now start research with an AI chatbot, up from 29% a year earlier. G2, Forrester, 2026.</p></div>
   </section>
 
-  <!-- HOW WE WORK -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>How we work</div>
     <h2 class="sh">We build research for demand gen. <span class="o">Not the other way around.</span></h2>
     <p class="lede">The research is built to convert, and it ships with the materials to use it. From there, one choice: run it yourself, or have us run the whole motion for you.</p>
     <div class="g2">
-      <div class="card accent">
-        <div class="hd bg-orange"><span class="cap" style="color:#fff">Research + materials</span><span class="badge" style="background:#fff;color:var(--ink)">INCLUDED</span></div>
-        <h3>A robust set to run it yourself</h3>
-        <p>The report, plus a strong set of marketing and sales materials to use as-is or build from. Enough to put it to work without us running the campaigns.</p>
-      </div>
-      <div class="card">
-        <div class="hd bg-paleyellow"><span class="cap">Done-for-you</span><span class="badge ink">IF YOU WANT</span></div>
-        <h3>Or we run the whole motion</h3>
-        <p>Demand gen, enablement, the customer webinar, performance marketing, PR. The robust version, run for you, so your team stays on selling.</p>
-      </div>
+      <div class="card accent"><div class="hd bg-orange"><span class="cap" style="color:#fff">Research + materials</span><span class="badge" style="background:#fff;color:var(--ink)">INCLUDED</span></div><h3>A robust set to run it yourself</h3><p>The report, plus a strong set of marketing and sales materials to use as-is or build from. Enough to put it to work without us running the campaigns.</p></div>
+      <div class="card"><div class="hd bg-paleyellow"><span class="cap">Done-for-you</span><span class="badge ink">IF YOU WANT</span></div><h3>Or we run the whole motion</h3><p>Demand gen, enablement, the customer webinar, performance marketing, PR. The robust version, run for you, so your team stays on selling.</p></div>
     </div>
     <div class="card ink stack"><p style="margin:0;font-size:clamp(15px,1.5vw,16px)">We only take on the done-for-you work because we stand behind our research.</p></div>
   </section>
 
-  <!-- WHY US -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>Why us</div>
     <h2 class="sh">We've built this exact motion. <span class="o">Many times.</span></h2>
     <p class="lede">Original research, the demand gen that runs off it, and the enablement underneath. Every piece of what TrueRead sells, we have shipped before, in hard technical B2B categories.</p>
@@ -193,27 +339,17 @@
     <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#444"><b>Jacob Nikolau.</b> Founding and zero-to-one marketer at Mosaic, NovoEd, and Mursion, across next-generation agentic project management, enterprise learning, and enterprise virtual reality.</p></div>
   </section>
 
-  <!-- ONE ASSET TWO USES -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The offer</div>
     <h2 class="sh">One report. <span class="o">Two jobs.</span></h2>
     <p class="lede">The same research asset works twice. Marketing runs it as a demand engine. Sales pulls the numbers into live deals.</p>
     <div class="g2">
-      <div class="card">
-        <div class="hd bg-sky"><span class="cap">Marketing · demand</span></div>
-        <h3>A campaign, not a PDF</h3>
-        <ul class="b"><li>Social and ad concepts cut to the sharpest data slices</li><li>Email, search, GEO and AEO, the report at the center</li><li>A webinar built around the findings</li></ul>
-      </div>
-      <div class="card">
-        <div class="hd bg-paleyellow"><span class="cap">Sales · enablement</span></div>
-        <h3>Stats reps actually cite</h3>
-        <ul class="b"><li>Findings cut to slides, with the talk track for each</li><li>Objection-handling numbers, built with your sales lead</li><li>One enablement session so it lands in deals</li></ul>
-      </div>
+      <div class="card"><div class="hd bg-sky"><span class="cap">Marketing · demand</span></div><h3>A campaign, not a PDF</h3><ul class="b"><li>Social and ad concepts cut to the sharpest data slices</li><li>Email, search, GEO and AEO, the report at the center</li><li>A webinar built around the findings</li></ul></div>
+      <div class="card"><div class="hd bg-paleyellow"><span class="cap">Sales · enablement</span></div><h3>Stats reps actually cite</h3><ul class="b"><li>Findings cut to slides, with the talk track for each</li><li>Objection-handling numbers, built with your sales lead</li><li>One enablement session so it lands in deals</li></ul></div>
     </div>
   </section>
 
-  <!-- HOW IT'S BUILT -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>How it's built</div>
     <h2 class="sh">Real data. <span class="o">Not a literature review.</span></h2>
     <p class="lede">The numbers are primary, which is what makes them yours. Two inputs are standard. A third is there for teams who can share it.</p>
@@ -224,8 +360,7 @@
     </div>
   </section>
 
-  <!-- WHY IT DOESN'T FADE -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The difference</div>
     <h2 class="sh">A report fades. <span class="o">A program compounds.</span></h2>
     <p class="lede">Most research dies because it ships as a PDF and stops. Three things keep this one working.</p>
@@ -237,18 +372,13 @@
     <div class="stat"><span class="n">60-70%</span><p>of B2B marketing content goes unused by sales. Building the asset with sales, and for sales, keeps this one off the shelf. Forrester.</p></div>
   </section>
 
-  <!-- CADENCE -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The cadence</div>
     <h2 class="sh">One report owns the category. <span class="o">The rest go narrow.</span></h2>
     <p class="lede">We recommend one marquee study a year, category-wide, the benchmark the whole market cites. Then we niche down: sharp cross-cuts of a single ICP and persona. The expensive part for a survey shop built for big studies, the cheap part for us.</p>
     <div class="card accent stack" style="margin-top:clamp(22px,2.6vw,30px)">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-        <span class="pill bg-orange" style="color:#fff;font-size:15px;box-shadow:none">MARQUEE</span>
-        <span class="mono" style="font-size:13px;color:var(--soft)">1× / YEAR</span>
-      </div>
-      <h3 style="margin-top:14px">The category, once a year</h3>
-      <p>Broad, citable, the report everyone references. The flagship you own and repeat.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span class="pill bg-orange" style="color:#fff;font-size:15px;box-shadow:none">MARQUEE</span><span class="mono" style="font-size:13px;color:var(--soft)">1× / YEAR</span></div>
+      <h3 style="margin-top:14px">The category, once a year</h3><p>Broad, citable, the report everyone references. The flagship you own and repeat.</p>
     </div>
     <div class="row"><span class="pill bg-yellow" style="color:var(--ink);font-size:15px;box-shadow:none">CROSS-CUTS</span><span style="font-size:clamp(14.5px,1.5vw,16px);color:#444">Niched to one ICP × persona. Sharp, cheap to run, as many as the quarter needs.</span></div>
     <div class="g3" style="margin-top:14px">
@@ -258,29 +388,25 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="reveal">
+  <section class="wrap reveal" id="pricing">
     <div class="eyebrow"><span class="sq"></span>What it costs</div>
     <h2 class="sh">Buy the research. <span class="o">Have us run it if you want.</span></h2>
     <p class="small" style="margin-top:12px">Panel cost passed through at cost, no markup. Media and ad spend on you.</p>
     <div class="gp" style="margin-top:clamp(22px,2.6vw,28px);align-items:stretch">
       <div class="card" style="border-style:dashed">
-        <div class="cap">Proof of concept · once</div>
-        <h3 style="font-size:clamp(22px,2.4vw,26px);margin-top:5px">Trial</h3>
+        <div class="cap">Proof of concept · once</div><h3 style="font-size:clamp(22px,2.4vw,26px);margin-top:5px">Trial</h3>
         <p class="small" style="font-style:italic;margin-top:9px">A survey of your own customers. Quick and cheap to field, the motion proven on a small scale first.</p>
         <ul class="b"><li>Surveys your existing customers, no panel to buy</li><li>Cheaper and faster to field than a market study</li><li>A working report in 30 days, money-back if I miss the date</li></ul>
         <div class="price"><span class="pill bg-peach" style="color:var(--ink)">$10K · once</span></div>
       </div>
       <div class="card">
-        <div class="hd bg-orange"><span class="cap" style="color:#fff">The core · stands alone</span></div>
-        <h3 style="font-size:clamp(22px,2.4vw,26px)">Research + materials</h3>
+        <div class="hd bg-orange"><span class="cap" style="color:#fff">The core · stands alone</span></div><h3 style="font-size:clamp(22px,2.4vw,26px)">Research + materials</h3>
         <p class="small" style="font-style:italic;margin-top:9px">The report plus a robust set of materials to run it yourself. Buy this and stop here.</p>
         <ul class="b"><li>The designed report, built for marketing and sales both</li><li>A robust set of marketing and sales materials to use or build from</li><li>A repeat survey that builds trend lines you own</li><li>$15K is our fee. The research panel is passed to you at cost, no markup.</li></ul>
         <div class="price"><span class="pill bg-orange" style="color:#fff">from $15K / report</span><div class="passnote">+ panel cost, passed through at cost</div></div>
       </div>
       <div class="card">
-        <div class="hd bg-teal"><span class="cap">Optional · we run it</span></div>
-        <h3 style="font-size:clamp(22px,2.4vw,26px)">Done-for-you</h3>
+        <div class="hd bg-teal"><span class="cap">Optional · we run it</span></div><h3 style="font-size:clamp(22px,2.4vw,26px)">Done-for-you</h3>
         <p class="small" style="font-style:italic;margin-top:9px">The robust version, run for you, so your team stays on selling.</p>
         <ul class="b"><li>The demand engine: social, ads, email, LinkedIn outbound</li><li>Enablement sessions that land it in deals</li><li>A co-presented webinar per cycle</li><li>PR run end to end: I find and manage the agent, you stay out of it</li></ul>
         <div class="price"><span class="pill bg-teal" style="color:var(--ink)">from +$3K / quarter</span><div class="passnote">+ panel and media, passed through at cost</div></div>
@@ -289,17 +415,12 @@
     <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#333"><b>Why we even offer it:</b> we only run the done-for-you work because we stand behind the research. Take the materials and do it yourself, or hand us the execution. The research is the same either way.</p></div>
   </section>
 
-  <!-- THE ENGINE -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The engine</div>
     <h2 class="sh">The report is the fuel. <span class="o">The engine runs all year.</span></h2>
     <p class="lede">Not a PDF a few times a year. An always-on demand motion that proprietary data keeps loaded. This is what makes done-for-you recurring instead of one-off.</p>
     <div class="engine">
-      <div class="card bg-orange" style="justify-content:center;text-align:center;color:#fff">
-        <div class="cap" style="color:#ffe9e2">Each cycle</div>
-        <h3 style="font-size:clamp(22px,2.4vw,26px);color:#fff;margin-top:8px">The report</h3>
-        <p style="color:#ffe9e2">primary data, designed</p>
-      </div>
+      <div class="card bg-orange" style="justify-content:center;text-align:center;color:#fff"><div class="cap" style="color:#ffe9e2">Each cycle</div><h3 style="font-size:clamp(22px,2.4vw,26px);color:#fff;margin-top:8px">The report</h3><p style="color:#ffe9e2">primary data, designed</p></div>
       <div class="g2" style="margin-top:0">
         <div class="card"><div class="cap">Always on</div><h3 style="font-size:clamp(17px,1.7vw,19px);margin-top:6px">Paid + organic social</h3><p>Concepts cut to data slices, resized, ready to run.</p></div>
         <div class="card"><div class="cap">Always on</div><h3 style="font-size:clamp(17px,1.7vw,19px);margin-top:6px">Email + nurture</h3><p>A sequence the findings carry, client-facing or cold.</p></div>
@@ -309,35 +430,18 @@
     </div>
   </section>
 
-  <!-- LINKEDIN + PAID -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>LinkedIn + paid</div>
     <h2 class="sh">The report finds the buyer. <span class="o">On autopilot.</span></h2>
     <p class="lede">Start with managed 1:1 outreach. Layer paid reach on top as it earns its keep. Each level sits on the one before it. Media and ad spend are separate and on you.</p>
     <div class="gp" style="align-items:stretch">
-      <div class="card accent">
-        <div class="hd bg-orange"><span class="cap" style="color:#fff">Base · per seat</span></div>
-        <h3 style="font-size:clamp(18px,1.8vw,19px)">Outreach automation</h3>
-        <ul class="b"><li>Build a custom ICP list, one-time</li><li>Automated 1:1 outreach from your seats, the report as the opener</li><li>Matched accounts handed to sales</li></ul>
-        <div class="price"><span class="pill bg-orange" style="color:#fff;font-size:16px">$250 / seat / mo</span><div class="passnote">4-seat min ($3K/q) · + $2,500 list build</div></div>
-      </div>
-      <div class="card">
-        <div class="hd bg-sky"><span class="cap">Add · +$500 / mo</span></div>
-        <h3 style="font-size:clamp(18px,1.8vw,19px)">Paid ad management</h3>
-        <p>LinkedIn conversation ads and Meta display ads, managed end to end, promoting the ebook to the same buyers the outreach is reaching.</p>
-        <div class="price"><span class="pill bg-sky" style="color:var(--ink);font-size:16px">+$500 / mo</span></div>
-      </div>
-      <div class="card">
-        <div class="hd bg-paleyellow"><span class="cap">Add · +$1,500 / mo</span><span class="badge ink">MONTH 6+</span></div>
-        <h3 style="font-size:clamp(18px,1.8vw,19px)">Multi-channel orchestration</h3>
-        <p>Identity resolution and audience construction across LinkedIn, Meta, Reddit, and YouTube / Video 360. The full programmatic build around the research.</p>
-        <div class="price"><span class="pill bg-paleyellow" style="color:var(--ink);font-size:16px">+$1,500 / mo</span></div>
-      </div>
+      <div class="card accent"><div class="hd bg-orange"><span class="cap" style="color:#fff">Base · per seat</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Outreach automation</h3><ul class="b"><li>Build a custom ICP list, one-time</li><li>Automated 1:1 outreach from your seats, the report as the opener</li><li>Matched accounts handed to sales</li></ul><div class="price"><span class="pill bg-orange" style="color:#fff;font-size:16px">$250 / seat / mo</span><div class="passnote">4-seat min ($3K/q) · + $2,500 list build</div></div></div>
+      <div class="card"><div class="hd bg-sky"><span class="cap">Add · +$500 / mo</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Paid ad management</h3><p>LinkedIn conversation ads and Meta display ads, managed end to end, promoting the ebook to the same buyers the outreach is reaching.</p><div class="price"><span class="pill bg-sky" style="color:var(--ink);font-size:16px">+$500 / mo</span></div></div>
+      <div class="card"><div class="hd bg-paleyellow"><span class="cap">Add · +$1,500 / mo</span><span class="badge ink">MONTH 6+</span></div><h3 style="font-size:clamp(18px,1.8vw,19px)">Multi-channel orchestration</h3><p>Identity resolution and audience construction across LinkedIn, Meta, Reddit, and YouTube / Video 360. The full programmatic build around the research.</p><div class="price"><span class="pill bg-paleyellow" style="color:var(--ink);font-size:16px">+$1,500 / mo</span></div></div>
     </div>
   </section>
 
-  <!-- FAST START -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The fast start</div>
     <h2 class="sh">The kickoff is for strategy. <span class="o">We do the basics first.</span></h2>
     <p class="lede">In the first week, before we sit down, you get three foundations to review on your own time. So the kickoff is spent on content strategy, not getting us up to speed.</p>
@@ -349,8 +453,7 @@
     <div class="card bg-fill stack"><p style="margin:0;font-size:clamp(14px,1.4vw,14.5px);color:#333"><b>Reviewed async.</b> You read and comment on your own time. By the time we meet, the basics are settled and the kickoff is all content strategy.</p></div>
   </section>
 
-  <!-- PAYOFF -->
-  <section class="reveal">
+  <section class="wrap reveal">
     <div class="eyebrow"><span class="sq"></span>The payoff</div>
     <h2 class="sh">Year one earns trust. <span class="o">Year three can't be copied.</span></h2>
     <div class="g3">
@@ -360,30 +463,83 @@
     </div>
   </section>
 
-  <!-- CLOSE -->
-  <section style="border-top:none">
+  <section class="wrap reveal">
     <div class="close">
       <div class="eyebrow" style="color:#9a9a9a;margin-bottom:20px"><span class="sq" style="background:var(--orange);border-color:var(--orange)"></span>What's next</div>
       <h2>Start with one <span class="o">report.</span></h2>
       <p>$10,000, one asset, 30 days. If it lands, it becomes a cadence and an engine: a survey you repeat, a demand motion that runs all year, and a dataset that gets harder to copy every cycle.</p>
-      <a class="cta" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20Let's%20talk">Email Jacob</a>
+      <div class="ctas two"><a class="btn btn-secondary" href="mailto:jacob@trueread.co?subject=TrueRead%20%E2%80%94%20More%20information">Email for more information</a><a class="btn btn-primary" href="#process" data-goto="book">Book a 30-min strategy call</a></div>
       <div class="closefoot">Jacob Nikolau · TrueRead · jacob@trueread.co</div>
+    </div>
+  </section>
+
+  <section class="wrap reveal" id="book">
+    <div class="eyebrow"><span class="sq"></span>Book a call</div>
+    <h2 class="sh">Book a 30-minute <span class="o">strategy call.</span></h2>
+    <p class="lede">Pick a time that works. We'll talk through your category, the research that would land, and how the motion would run. No prep needed.</p>
+    <div class="bookwrap">
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1K-6lR3v5kTs8H0FUINIQd9GmOf66cNO1thCWsZFL2MFLd1hFnQ72sj8zU0n5MbriLXO-H7A6S?gv=true" style="border:0" width="100%" height="600" frameborder="0" title="Book a 30-minute strategy call"></iframe>
     </div>
   </section>
 
 </main>
 
-<footer><div class="wrap"><span class="mono">TrueRead · trueread.co</span></div></footer>
+<footer>
+  <div class="wrap foot">
+    <span class="mono">© TrueRead · Jacob Nikolau</span>
+    <div style="display:flex;gap:18px;flex-wrap:wrap">
+      <a href="#home" data-view="home">Home</a>
+      <a href="#process" data-view="process">Our process</a>
+      <a href="mailto:jacob@trueread.co">jacob@trueread.co</a>
+    </div>
+  </div>
+</footer>
 
 <script>
   (function(){
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')}); return;
+    var hdr=document.getElementById('hdr'), hamb=document.getElementById('hamb');
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+
+    function revealView(view){
+      view.querySelectorAll('.reveal').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (reduce || r.top < (window.innerHeight||800)) { el.classList.add('in'); }
+        else { io.observe(el); }
+      });
     }
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{threshold:0.08, rootMargin:'0px 0px -6% 0px'});
-    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+    function showView(name, opts){
+      name = (name==='process') ? 'process' : 'home';
+      document.querySelectorAll('.view').forEach(function(v){ v.classList.toggle('active', v.id==='view-'+name); });
+      document.querySelectorAll('[data-view]').forEach(function(a){ a.classList.toggle('active', a.getAttribute('data-view')===name); });
+      if(!(opts && opts.noscroll)) window.scrollTo(0,0);
+      revealView(document.getElementById('view-'+name));
+    }
+    function route(){
+      hdr.classList.remove('open');
+      if(hamb){ hamb.setAttribute('aria-expanded','false'); hamb.setAttribute('aria-label','Open menu'); }
+      showView(location.hash==='#process' ? 'process' : 'home');
+    }
+    window.addEventListener('hashchange', route);
+
+    document.querySelectorAll('[data-goto]').forEach(function(b){
+      b.addEventListener('click', function(e){
+        e.preventDefault();
+        if(history.replaceState) history.replaceState(null,'','#process');
+        showView('process',{noscroll:true});
+        hdr.classList.remove('open');
+        var t = document.getElementById(b.getAttribute('data-goto'));
+        if(t) t.scrollIntoView({behavior: reduce?'auto':'smooth', block:'start'});
+      });
+    });
+
+    if(hamb){ hamb.addEventListener('click', function(){
+      var open = hdr.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', open?'true':'false');
+      hamb.setAttribute('aria-label', open?'Close menu':'Open menu');
+    }); }
+
+    route();
   })();
 </script>
 </body>
